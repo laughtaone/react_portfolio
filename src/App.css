@@ -36,3 +36,14 @@
     transform: rotate(360deg);
   }
 }
+
+
+
+
+/* 追加CSS */
+:root {
+  --common-back-color: #F5F7FD;
+  --common-back-hover-color: #FCFCFF;
+  --common-main-color: #12187B;
+}
+

@@ -4,16 +4,16 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 
 
-const Home = () => {
+const History = () => {
     return (<>
         <Header />
         <div>
-            <h1>Welcome to the Home Page!</h1>
-            <p>This is the main page of our application.</p>
+            <h1>History</h1>
+            <p>History</p>
         </div>
     </>);
 };
 
 
 
-export default Home;
+export default History;
