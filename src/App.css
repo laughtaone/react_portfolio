@@ -45,5 +45,27 @@
   --common-back-color: #F5F7FD;
   --common-back-hover-color: #FCFCFF;
   --common-main-color: #12187B;
+
+  --common-body-margin: 25px 30px;
 }
 
+
+h1 {
+  color: var(--common-main-color);
+}
+
+h2 {
+  color: var(--common-main-color);
+}
+
+h3 {
+  color: var(--common-main-color);
+}
+
+p {
+  color: var(--common-main-color);
+}
+
+a {
+  color: var(--common-main-color);
+}
