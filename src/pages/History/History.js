@@ -1,18 +1,18 @@
 import React from 'react';
-import '../../App.css';
-import './Home.css';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
+import ComponentPageTitle from '../../components/PageTitle';
 import CenteredContainer from '../../components/CenteredContainer';
 
 
 
-const Home = () => {
+
+const History = () => {
     return (<>
         <Header />
         <CenteredContainer>
-            <h1 className='hello-world'>Hello, World</h1>
-            <h2 style={{margin: 0}}>お探しの項目をお選びください</h2>
+            <ComponentPageTitle title="来歴" />
+            <p>History</p>
         </CenteredContainer>
         <Footer />
     </>);
@@ -20,4 +20,4 @@ const Home = () => {
 
 
 
-export default Home;
+export default History;

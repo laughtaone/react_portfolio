@@ -3,7 +3,7 @@ import '../../App.css';
 import { Link, useLocation } from 'react-router-dom';
 
 // ---------------- ヘッダーのCSS --------------------
-const headerStyles = `
+export const headerStyles = `
     .header {
         background-color: var(--common-back-color);
         color: var(--common-main-color);
@@ -13,6 +13,8 @@ const headerStyles = `
         align-items: center;
         height: 70px;
         box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+        border-bottom-left-radius: 25px;
+        border-bottom-right-radius: 25px;
     }
 
     .header-top-link-container {
@@ -31,7 +33,7 @@ const headerStyles = `
     }
 
     .header-top-link:hover {
-        background-color: var(--common-back-hover-color);
+        background-color: var(--common-back-light-color);
     }
 
     .header-nav-container {
@@ -64,7 +66,7 @@ const headerStyles = `
     }
 
     .header-nav-link:hover {
-        background-color: var(--common-back-hover-color);
+        background-color: var(--common-back-light-color);
         box-shadow: inset 0 -2px 0 0 #8289EC;
     }
 
@@ -74,7 +76,7 @@ const headerStyles = `
     }
 
     .header-nav-link.active:hover {
-        background-color: var(--common-back-hover-color);
+        background-color: var(--common-back-light-color);
     }
 `;
 // -------------------------------------------------
@@ -93,7 +95,7 @@ const Header = () => {
 
     return (
         <header className="header">
-            <h1 className='header-top-link-container'><a href="/" className="header-top-link">HELLO</a></h1>
+            <h1 className='header-top-link-container'><a href="/" className="header-top-link">USUBA Taichi</a></h1>
             <div className="header-nav-container">
                 <ul className="header-nav-list">
                     <li className="header-nav-item"><a href="profile" className={`header-nav-link ${location.pathname === '/profile' ? 'active' : ''}`}>プロフィール</a></li>

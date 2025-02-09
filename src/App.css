@@ -43,29 +43,21 @@
 /* 追加CSS */
 :root {
   --common-back-color: #F5F7FD;
-  --common-back-hover-color: #FCFCFF;
+  --common-back-light-color: #FCFCFF;
+  --common-back-deep-color: #E9EDFA;
+  --common-back-deep2-color: #D1DAF4;
   --common-main-color: #12187B;
+  --common-main-light-color: #8289EC;
+
+  --common-main-green-color: #4ec875;
+  --common-back-green-color: #EEFFF4;
+
 
   --common-body-margin: 25px 30px;
 }
 
 
-h1 {
+h1, h2, h3, p, a {
   color: var(--common-main-color);
-}
-
-h2 {
-  color: var(--common-main-color);
-}
-
-h3 {
-  color: var(--common-main-color);
-}
-
-p {
-  color: var(--common-main-color);
-}
-
-a {
-  color: var(--common-main-color);
+  margin: 0;
 }

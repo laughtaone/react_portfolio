@@ -2,11 +2,11 @@ import './App.css';
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home/Home';
-import Profile from './pages/Profile';
-import History from './pages/History';
-import Works from './pages/Works';
-import AboutThisSite from './pages/AboutThisSite';
-import Contact from './pages/Contact';
+import Profile from './pages/Profile/Profile';
+import History from './pages/History/History';
+import Works from './pages/Works/Works';
+import AboutThisSite from './pages/AboutThisSite/AboutThisSite';
+import Contact from './pages/Contact/Contact';
 
 
 const App = () => {
