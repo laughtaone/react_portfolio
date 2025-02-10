@@ -51,7 +51,7 @@ const Profile = () => {
                         title="趣味"
                         icon=<PaletteOutlined />
                         text="音楽鑑賞"
-                        detail="特に好きなグループ：Official髭男dism, Mrs. GREEN APPLE"
+                        detail="Official髭男dism, Mrs. GREEN APPLE"
                     />
 
                     <ComponentProfileTile
@@ -61,7 +61,7 @@ const Profile = () => {
                         text="Flutter/Dart, Firebase, Python, AWS, React, Swift, Rust"
                         detail=<ul style={{ textAlign: "left" }}>
                             <li>日常的に学習/使用：Flutter/Dart, Python</li>
-                            <li>開発使用経験あり：Flutter/Dart, Firebase, AWS, React, Swift</li>
+                            <li>開発使用経験あり：Firebase, AWS, React, Swift</li>
                             <li>触った程度：Rust</li>
                         </ul>
                     />
@@ -88,7 +88,7 @@ const Profile = () => {
                                 icon=<LanguageOutlined />
                                 text=<div>
                                     <ComponentSnsTile
-                                        icon=<GitHub />
+                                        icon="github"
                                         title="GitHub - @laughtaone"
                                         url='https://github.com/laughtaone'
                                     />
@@ -106,7 +106,7 @@ const Profile = () => {
                                         url='https://www.wantedly.com/id/usubataichi'
                                     />
                                     <ComponentSnsTile
-                                        icon=<FontAwesomeIcon icon={faAppStoreIos} />
+                                        icon="appstore"
                                         title="AppStore"
                                         url='https://www.wantedly.com/id/usubataichi'
                                     />
