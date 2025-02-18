@@ -46,7 +46,7 @@ const History = () => {
                     <ComponentDetailTile title={"参加人数"} content={"個人"} />
                 }
                 links={
-                    <SnsTileCommonOption icon="file" title={"アイデア資料"} url="" />
+                    <SnsTileCommonOption icon="file" title={"アイデア資料"} url="https://drive.google.com/file/d/1eNNoBpYQfrtQpOL7fFGEI37SjNs3VcMe/view?usp=drive_link" />
                 }
             />
 

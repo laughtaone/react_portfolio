@@ -5,13 +5,39 @@ import ComponentPageTitle from '../../components/PageTitle';
 import ComponentProfileTile from './ComponentProfileTile';
 import ComponentSnsTile, { style } from './ComponentSnsTile';
 import Spacer from '../../components/Spacer'
-import { BrushOutlined, ConstructionOutlined, GitHub, LanguageOutlined, PaletteOutlined, SchoolOutlined, ScienceOutlined, StarBorderOutlined, X } from '@mui/icons-material';
+import { BrushOutlined, ConstructionOutlined, FavoriteBorderOutlined, FitnessCenterOutlined, FlagOutlined, GitHub, LanguageOutlined, LocalPolice, LocalPoliceOutlined, PaletteOutlined, SchoolOutlined, ScienceOutlined, StarBorderOutlined, VerifiedOutlined, X } from '@mui/icons-material';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAppStoreIos } from '@fortawesome/free-brands-svg-icons';
 import profileIcon from '../../assets/images/thinleaf_icon.jpg';
 import CenteredContainer from '../../components/CenteredContainer';
 
 
+// ---------------------------- プロフィール データ ----------------------------
+const profileDataMain = [
+    {
+        title: "学校",
+        icon: <SchoolOutlined />,
+        text: ""
+    }
+];
+
+const profileDataLeft = [
+    {
+        title: "MBTI",
+        icon: <FavoriteBorderOutlined />,
+        text: "INFJ (提唱者)"
+    }
+];
+
+const profileDataRight = [
+    {
+        title: "趣味",
+        icon: <PaletteOutlined />,
+        text: "音楽鑑賞",
+        detail: "Official髭男dism, Mrs. GREEN APPLE"
+    }
+];
+// --------------------------------------------------------------------------
 
 
 
@@ -40,7 +66,7 @@ const Profile = () => {
 
                     <Spacer height={10} />
 
-
+                    {/* --------------------------------------- プロフィール内容 --------------------------------------- */}
                     <ComponentProfileTile
                         title="学校"
                         icon=<SchoolOutlined />
@@ -84,6 +110,11 @@ const Profile = () => {
                         {/* 左側の要素 */}
                         <div style={{ width: '40%' }}>
                             <ComponentProfileTile
+                                title="MBTI"
+                                icon=<FavoriteBorderOutlined />
+                                text="INFJ (提唱者)"
+                            />
+                            <ComponentProfileTile
                                 title="SNS等"
                                 icon=<LanguageOutlined />
                                 text=<div>
@@ -126,8 +157,28 @@ const Profile = () => {
                                 icon=<StarBorderOutlined />
                                 text="Hack Uへの参加・研修旅行"
                             />
+                            <ComponentProfileTile
+                                title="資格"
+                                icon=<LocalPoliceOutlined />
+                                text="（2025.3 受験予定：実用数学技能検定(数検) 2級）"
+                            />
+                            <ComponentProfileTile
+                                title="中学時代の部活動"
+                                icon=<FitnessCenterOutlined />
+                                text="バスケットボール部"
+                            />
+                            <ComponentProfileTile
+                                title="現在の夢"
+                                icon=<FlagOutlined />
+                                text=<div>
+                                    <p>自分がプライベートで開発したアプリが</p>
+                                    <p>AppStoreのランキングに載ること</p>
+                                </div>
+                                detail="1つの大きな目標を掲げた方が頑張れるため"
+                            />
                         </div>
                     </div>
+                    {/* --------------------------------------------------------------------------------------------- */}
                 </div>
             </div>
         </CenteredContainer>

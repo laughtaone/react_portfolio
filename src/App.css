@@ -50,7 +50,11 @@
   --common-main-light-color: #8289EC;
 
   --common-main-green-color: #4ec875;
+  --common-main-green-deep-color: #298346;
   --common-back-green-color: #EEFFF4;
+  --common-back-green-light-color: #F6FDF9;
+  --common-back-green-deep-color: #DAF7E9;
+  --common-back-green-deep2-color: #C4F2DC;
 
 
   --common-body-margin: 25px 30px 130px 30px;

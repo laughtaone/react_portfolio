@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Icon from '@mui/material/Icon';
 import '../../App.css';
 import { AttachFileOutlined, GitHub, YouTube } from '@mui/icons-material';
@@ -10,7 +10,6 @@ import { faAppStoreIos } from '@fortawesome/free-brands-svg-icons';
 // -------------------- CSS ------------------------
 export const style = `
     .sns-tile-container {
-        margin: 0 0 10px 0;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -18,13 +17,8 @@ export const style = `
         height: auto;
         position: fit-content;
         border-radius: 100px;
-        background-color: var(--common-back-deep-color);
         transition: background-color 0.15s;
         text-decoration: none;
-    }
-
-    .sns-tile-container:hover {
-        background-color: var(--common-back-deep2-color);
     }
 
     .sns-tile-content {
@@ -42,7 +36,17 @@ export const style = `
 
 
 
-const ComponentSnsTile = ({ icon, title, url="", needsRightPadding=false, isMiniSize=false }) => {
+const ComponentSnsTile = ({
+    icon,
+    title,
+    url="",
+    needsRightPadding=false,
+    needsBottomMargin=true,
+    isMiniSize=false,
+    customBackColor,
+    customHoverBackColor,
+    isFullWidth=true
+}) => {
     React.useEffect(() => {
         const styleSheet = document.createElement("style");
         styleSheet.innerText = style;
@@ -50,9 +54,32 @@ const ComponentSnsTile = ({ icon, title, url="", needsRightPadding=false, isMini
         return () => styleSheet.remove();
     }, []);
 
+
+    const [isHovered, setIsHovered] = useState(false);
+    const handleMouseEnter = () => {
+        setIsHovered(true);
+    };
+    const handleMouseLeave = () => {
+        setIsHovered(false);
+    };
+
+
+
     return (
         <div style={{marginRight: needsRightPadding ? 5 : 0, fontSize: isMiniSize ? '90%' : null}}>
-            <a href={url} className="sns-tile-container" target="_blank" rel="noopener noreferrer" style={{padding: isMiniSize ? '3px 18px' : '6px 23px'}}>
+            <a
+                href={url}
+                target="_blank" rel="noopener noreferrer"
+                style={{
+                    padding: isMiniSize ? '3px 18px' : '6px 23px',
+                    backgroundColor: isHovered ? (customHoverBackColor ?? 'var(--common-back-deep2-color') : (customBackColor ?? 'var(--common-back-deep-color)'),
+                    width: isFullWidth ? 'null' : 'fit-content',
+                    marginBottom: needsBottomMargin ? '5px' :'0px'
+                }}
+                className="sns-tile-container"
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+            >
                 <div className="sns-tile-content">
                     <Icon style={{ paddingTop: 2, paddingBottom: 2 }} >{
                         icon=="file"
