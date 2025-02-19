@@ -1,11 +1,12 @@
 import React from 'react';
 import purpleLeaf from '../assets/images/deep-purple_leaf.png';
+import Spacer from './Spacer';
 
 
 
 
 const ComponentPageTitle = ({ title }) => {
-    return (
+    return (<>
         <h1>
             <img
                 src={purpleLeaf}
@@ -14,7 +15,8 @@ const ComponentPageTitle = ({ title }) => {
             />
             {title}
         </h1>
-    );
+        <Spacer height={40} />
+    </>);
 };
 
 export default ComponentPageTitle;

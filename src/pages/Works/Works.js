@@ -7,13 +7,13 @@ import ComponentWorkTile from './ComponentWorkTile';
 import ComponentHoverDetailTile from './mini_components/ComponentHoverDetailTile';
 import ComponentHoverLinkTile from './mini_components/ComponentHoverLinkTile';
 
-import ThumbnailChallenge from './thumbnail_images/challenge-app.png';
-import Sushiwari from './thumbnail_images/sushiwari.png';
-import ShinagawaRunners from './thumbnail_images/shinagawa-runners.png';
+// import ShinagawaRunners from './thumbnail_images/shinagawa-runners.png';
+import { ThumbnailChallenge, Sushiwari, ShinagawaRunners } from './thumbnail_images';
 import PageName from '../../components/PageName';
 
 
-
+// 制作物データをインポート(制作物データはWorkData.jsという別ファイルに分けて管理)
+import workData from './WorkData';
 
 
 const Works = () => {
@@ -36,111 +36,61 @@ const Works = () => {
                 // minHeight: "300px",
                 // height: "auto"
             }}>
-                <ComponentWorkTile
-                    title={"挑戦応援アプリ"}
-                    subtitle={"2023年7月 | アプリ甲子園 | 個人"}
-                    image={ThumbnailChallenge}
-                    width= 'calc(33.33% - 5px)'
-                    detailTitle={<>
-                        <p style={{color: 'var(--common-main-green-deep-color)'}}>挑戦応援アプリを考案</p>
-                        <p style={{color: 'var(--common-main-green-deep-color)'}}>アイデアをアプリ甲子園へ応募</p>
-                    </>}
-                    detailTiles={<ComponentHoverDetailTile
-                        title="参加人数"
-                        content="個人"
-                    />}
-                    detailLinks={<ComponentHoverLinkTile
-                        url='https://drive.google.com/file/d/1eNNoBpYQfrtQpOL7fFGEI37SjNs3VcMe/view?usp=drive_link'
-                        icon="file"
-                        title="アイデア資料"
-                    />}
-                />
-                <ComponentWorkTile
-                    title={"スシワリ"}
-                    subtitle={"2024年1月 | Hack U | 2人"}
-                    image={Sushiwari}
-                    width= 'calc(33.33% - 5px)'
-                    detailTitle="回転寿司店での割り勘に特化したアプリ"
-                    detailTiles={<>
-                        <ComponentHoverDetailTile
-                            title="開発手法"
-                            content="Flutter"
-                        />
-                        <ComponentHoverDetailTile
-                            title="担当"
-                            content="グループ/お店管理ページ, 発表資料作成, 発表"
-                        />
-                        <ComponentHoverDetailTile
-                            title="経験"
-                            content="発表時にスライドが自動再生されてしまうアクシデント"
-                        />
-                    </>}
-                    detailLinks={<>
-                        <ComponentHoverLinkTile icon={"file"} title={"HackU紹介ページ"} />
-                        <ComponentHoverLinkTile icon={"youtube"} title={"HackU発表時の映像"} />
-                        <ComponentHoverLinkTile icon={"github"} title={"GitHubリポジトリ"} />
-                    </>}
-                />
-                <ComponentWorkTile
-                    title={"品川ランナーズ"}
-                    subtitle={"2024年2月 | 品川ビジネスコンテスト(区民の部) | 3人"}
-                    image={ShinagawaRunners}
-                    width= 'calc(33.33% - 5px)'
-                    detailTitle={<>
-                        <p style={{color: 'var(--common-main-green-deep-color)'}}>Hack U 都立産技高専 2023 参加</p>
-                        <p style={{color: 'var(--common-main-green-deep-color)'}}>回転寿司店での割り勘に特化したアプリ</p>
-                    </>}
-                    detailTiles={<>
-                        <ComponentHoverDetailTile
-                            title="開発手法"
-                            content="Flutter"
-                        />
-                        <ComponentHoverDetailTile
-                            title="担当"
-                            content="グループ/お店管理ページ, 発表資料作成, 発表"
-                        />
-                        <ComponentHoverDetailTile
-                            title="経験"
-                            content="発表時にスライドが自動再生されてしまうアクシデント"
-                        />
-                    </>}
-                    detailLinks={<>
-                        <ComponentHoverLinkTile icon={"file"} title={"HackU紹介ページ"} />
-                        <ComponentHoverLinkTile icon={"youtube"} title={"HackU発表時の映像"} />
-                        <ComponentHoverLinkTile icon={"github"} title={"GitHubリポジトリ"} />
-                    </>}
-                />
-                <ComponentWorkTile
-                    title={"品川ランナーズ"}
-                    subtitle={"2024年2月 | 品川ビジネスコンテスト(区民の部) | 3人"}
-                    image={ShinagawaRunners}
-                    width= 'calc(33.33% - 5px)'
-                    detailTitle={<>
-                        <p style={{color: 'var(--common-main-green-deep-color)'}}>Hack U 都立産技高専 2023 参加</p>
-                        <p style={{color: 'var(--common-main-green-deep-color)'}}>回転寿司店での割り勘に特化したアプリ</p>
-                    </>}
-                    detailTiles={<>
-                        <ComponentHoverDetailTile
-                            title="開発手法"
-                            content="Flutter"
-                        />
-                        <ComponentHoverDetailTile
-                            title="担当"
-                            content="グループ/お店管理ページ, 発表資料作成, 発表"
-                        />
-                        <ComponentHoverDetailTile
-                            title="経験"
-                            content="発表時にスライドが自動再生されてしまうアクシデント"
-                        />
-                    </>}
-                    detailLinks={<>
-                        <ComponentHoverLinkTile icon={"file"} title={"HackU紹介ページ"} />
-                        <ComponentHoverLinkTile icon={"youtube"} title={"HackU発表時の映像"} />
-                        <ComponentHoverLinkTile icon={"github"} title={"GitHubリポジトリ"} />
-                    </>}
-                />
+                {/* ----------------------------------------- 制作物要素開始 ---------------------------------------- */}
+                {workData.map((item, index) => (
+                    <ComponentWorkTile
+                        key={index}
+                        title={item.title}
+                        subtitle={
+                            (typeof item.subtitle === 'string')
+                            ? item.subtitle
+                            : (Array.isArray(item.subtitle))
+                                ? <>{item.subtitle.map((text, index) => <p key={index}>{text}</p>)}</>
+                                : null
+                        }
+                        image={item.image}
+                        year={item.year}
+                        month={item.month}
+                        kind={item.kind}
+                        isDateStart={item.isDateStart}
+                        detailTitle={
+                            (typeof item.detailTitle === 'string')
+                            ? item.detailTitle
+                            : (Array.isArray(item.detailTitle))
+                                ? <>{item.detailTitle.map((text, index) => <p key={index}>{text}</p>)}</>
+                                : null
+                        }
+                        detailTiles={
+                            (typeof item.detailTiles === 'string')
+                            ? item.detailTiles
+                            : (Array.isArray(item.detailTiles))
+                                ? <>{item.detailTiles.map((detail, index) => (
+                                    <ComponentHoverDetailTile
+                                        key={index}
+                                        title={detail.title}
+                                        content={detail.content}
+                                    />
+                                ))}</>
+                                : null
+                        }
+                        detailLinks={
+                            (typeof item.detailLinks === 'string')
+                            ? item.detailLinks
+                            : (Array.isArray(item.detailLinks))
+                                ? <>{item.detailLinks.map((link, index) => (
+                                    <ComponentHoverLinkTile
+                                        key={index}
+                                        icon={link.icon}
+                                        title={link.title}
+                                        url={link.url}
+                                    />
+                                ))}</>
+                                : null
+                        }
+                    />
+                ))}
+                {/* -----------------------------------------ーーーーーーーー---------------------------------------- */}
             </div>
-
         </CenteredContainer>
         <Footer />
     </>);

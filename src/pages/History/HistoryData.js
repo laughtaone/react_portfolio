@@ -138,7 +138,7 @@ const historyData = [
             },
             {
                 title: "開発手法",
-                content: "Flutter, Firebase Storage/Cloud Firestore/Authentication",
+                content: "Flutter, Firebase(Storage/Cloud Firestore/Authentication)",
             },
             {
                 title: "UIアイデア作成",

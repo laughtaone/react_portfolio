@@ -22,7 +22,6 @@ const Profile = () => {
         <Header />
         <CenteredContainer>
             <ComponentPageTitle title="プロフィール" />
-            <Spacer height={40} />
 
             <div style={{ display: 'flex' }}>
                 {/* --------------------------------------- プロフィール 画像 -------------------------------------- */}

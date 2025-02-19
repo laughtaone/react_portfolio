@@ -4,6 +4,7 @@ import '../../App.css';
 import ComponentHoverDetailTile from './mini_components/ComponentHoverDetailTile';
 import ComponentHoverLinkTile from './mini_components/ComponentHoverLinkTile';
 import Spacer from '../../components/Spacer';
+import ComponentCategoryInfomation from './ComponentCategoryInfomation';
 
 
 // -------------------- CSS ------------------------
@@ -13,7 +14,7 @@ export const style = `
 
 
 
-const ComponentWorkTile = ({ title, subtitle, image, detailTitle, detailTiles, detailLinks }) => {
+const ComponentWorkTile = ({ title, subtitle, image, year, month, isDateStart=false, kind, detailTitle, detailTiles, detailLinks }) => {
     React.useEffect(() => {
         const styleSheet = document.createElement("style");
         styleSheet.innerText = style;
@@ -35,7 +36,7 @@ const ComponentWorkTile = ({ title, subtitle, image, detailTitle, detailTiles, d
                 width: '290px',
                 textAlign: 'center',
                 borderRadius: '8px',
-                padding: '35px 10px 35px 10px',
+                padding: '20px 10px 30px 10px',
                 margin: '3px 3px 3px 3px',
                 display: 'flex',
                 flexDirection: 'column',
@@ -51,18 +52,39 @@ const ComponentWorkTile = ({ title, subtitle, image, detailTitle, detailTiles, d
             }}
         >
             <div>
-                <h2 style={{color: isHovered ? 'var(--common-main-green-color)' : 'var(--common-main-color)'}}>{title}</h2>
+                <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                    <ComponentCategoryInfomation kind={kind} />
+                </div>
+                <h2 style={{ color: isHovered ? 'var(--common-main-green-color)' : 'var(--common-main-color)' }}>{title}</h2>
+                <p style={{ fontSize: '85%', color: isHovered ? 'var(--common-main-green-color)' : 'var(--common-main-color)' }}>
+                    {
+                        (isDateStart)
+                            ? (year && month)
+                                ? <>{year}年{month}月-</>
+                                : (year && !month)
+                                    ? <>{year}年-</>
+                                    : null
+                            : (!isDateStart)
+                                ? (year && month)
+                                    ? <>{year}年{month}月</>
+                                    : (year && !month)
+                                        ? <>{year}年</>
+                                        : null
+                                : null
+                    }
+                </p>
+                <Spacer height={5} />
                 <p style={{ fontSize: '85%', color: isHovered ? 'var(--common-main-green-color)' : 'var(--common-main-color)' }}>{subtitle}</p>
             </div>
 
             {!isHovered
-                ? <>
-                    <img
+                ? (image)
+                    ? <img
                         src={image}
                         alt="画像"
-                        style={{ width: 'auto', height: '70%' }}
+                        style={{ width: 'auto', height: '65%' }}
                     />
-                </>
+                    : null
                 : <div style={{
                     display: 'flex',
                     flexDirection: 'column',
@@ -74,7 +96,7 @@ const ComponentWorkTile = ({ title, subtitle, image, detailTitle, detailTiles, d
                     marginTop: '10px'
                 }}>
                     <div style={{width: '100%', marginBottom: '20px'}}>
-                        <h3 style={{fontSize: '90%', color: 'var(--common-main-green-deep-color)'}}>{detailTitle}</h3>
+                        <h3 style={{fontSize: '90%', color: 'var(--common-main-green-color)'}}>{detailTitle}</h3>
                         <Spacer height={10} />
                         {detailTiles}
                     </div>
