@@ -32,9 +32,9 @@ export const headerStyles = `
         transition: background-color 0.3s ease;
     }
 
-    .header-top-link:hover {
-        background-color: var(--common-back-light-color);
-    }
+    // .header-top-link:hover {
+        // background-color: var(--common-back-light-color);
+    // }
 
     .header-nav-container {
         height: 100%;

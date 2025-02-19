@@ -10,12 +10,15 @@ import ComponentHoverLinkTile from './mini_components/ComponentHoverLinkTile';
 import ThumbnailChallenge from './thumbnail_images/challenge-app.png';
 import Sushiwari from './thumbnail_images/sushiwari.png';
 import ShinagawaRunners from './thumbnail_images/shinagawa-runners.png';
+import PageName from '../../components/PageName';
 
 
 
 
 
 const Works = () => {
+    PageName("制作物");
+
     return (<>
         <Header />
         <CenteredContainer>

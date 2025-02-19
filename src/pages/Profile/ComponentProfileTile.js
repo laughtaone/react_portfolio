@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Icon from '@mui/material/Icon';
 import '../../App.css';
 import Spacer from '../../components/Spacer'
+import { ExpandMore } from '@mui/icons-material';
 
 
 
@@ -47,6 +48,10 @@ export const profileStyle = `
         margin: 5px 0;
     }
 
+    .detailIcon {
+        color: var(--common-main-light2-color);
+    }
+
     .detail {
         margin-top: 10px;
         color: var(--common-main-green-color);
@@ -54,7 +59,7 @@ export const profileStyle = `
         font-weight: 600;
     }
 
-    .detail-content {
+    .detailContent {
         background-color: white;
         border-radius: 10px;
         padding: 10px 15px;
@@ -64,6 +69,15 @@ export const profileStyle = `
 `;
 // -------------------------------------------------
 
+
+
+/* 引数：
+・title: タイトル（必須）
+・subtitle: サブタイトル（任意）
+・icon: アイコン（必須）
+・text: テキスト（必須）
+・detail: 詳細テキスト（任意・ホバー時に表示）
+*/
 
 
 
@@ -102,9 +116,16 @@ const ComponentProfileTile = ({ title, icon, text, subtitle="", detail }) => {
                 {text}
             </div>
 
+            {/* detailの要素が存在する場合に右上にアイコンを表示 */}
+            {detail!=null && (
+                <Icon className='detailIcon ' style={{ margin: 0 }}><ExpandMore /></Icon>
+            )}
+
+
+            {/* ホバー時の詳細 */}
             {isHovered && detail!=null && (
                 <div className={'detail'}>
-                    <div className='detail-content'>
+                    <div className='detailContent'>
                         {detail}
                     </div>
                 </div>

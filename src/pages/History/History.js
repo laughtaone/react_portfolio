@@ -8,7 +8,11 @@ import Spacer from '../../components/Spacer';
 import ComponentDetailTile from './mini_components/ComponentDetailTile';
 import ComponentHistoryTile from './ComponentHistoryTile';
 import ComponentSnsTile from '../Profile/ComponentSnsTile';
+import PageName from '../../components/PageName';
 
+
+// 来歴データをインポート(来歴データはHistoryData.jsという別ファイルに分けて管理)
+import { HistoryData } from './HistoryData';
 
 
 
@@ -20,6 +24,8 @@ const SnsTileCommonOption = ({ icon, title, url = "" }) => {
 
 
 const History = () => {
+    PageName("来歴");
+
     return (<>
         <Header />
         <CenteredContainer>

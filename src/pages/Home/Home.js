@@ -4,10 +4,13 @@ import './Home.css';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import CenteredContainer from '../../components/CenteredContainer';
+import PageName from '../../components/PageName';
 
 
 
 const Home = () => {
+    PageName("ホーム");
+
     return (<>
         <Header />
         <CenteredContainer>
