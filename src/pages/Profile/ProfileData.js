@@ -10,7 +10,7 @@ import { faAppStoreIos } from '@fortawesome/free-brands-svg-icons';
 ・profileDataLeft: プロフィール 2フェーズ目 左側部分
 ・profileDataRight: プロフィール 2フェーズ目 右側部分
 
-各マップ要素のキー:
+各マップ要素の形式:
 {
     title: "タイトル（必須）",
     subtitle: "サブタイトル（任意・タイトルの右に小さく表示）",

@@ -1,14 +1,32 @@
 // History.jsで使用するプロフィールデータ
 import React from 'react';
-import ComponentSnsTile, { style } from './ComponentSnsTile';
+import ComponentSnsTile, { style } from '../Profile/ComponentSnsTile';
 import { BrushOutlined, ConstructionOutlined, FavoriteBorderOutlined, FitnessCenterOutlined, FlagOutlined, GitHub, LanguageOutlined, LocalPolice, LocalPoliceOutlined, PaletteOutlined, SchoolOutlined, ScienceOutlined, StarBorderOutlined, VerifiedOutlined, X } from '@mui/icons-material';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAppStoreIos } from '@fortawesome/free-brands-svg-icons';
 
+
+
 /*
-各マップ要素のキー:
+各マップ要素の形式:
 {
-    
+    year: "年（必須）",
+    month: "月（必須）",
+    title: "タイトル（必須）",
+    subtitle: "サブタイトル（任意・タイトルの右に小さく表示）",
+    details: [
+        {
+            title: "詳細タイトル",
+            content: "詳細内容"
+        }
+    ],
+    links: [
+        {
+            icon: <アイコン>,
+            title: "リンクタイトル",
+            url: "リンクURL"
+        }
+    ]
 }
 */
 
@@ -29,7 +47,7 @@ const historyData = [
         month: "7",
         title: "アプリ甲子園 アイデア部門 応募",
         subtitle: "挑戦応援アプリを考案し応募",
-        detail: [
+        details: [
             {
                 title: "参加人数",
                 content: "個人",
@@ -53,7 +71,7 @@ const historyData = [
         month: "1",
         title: "Hack U 都立産技高専 2023 参加",
         subtitle: "回転寿司店に特化した割り勘アプリ「スシワリ」を開発",
-        detail: [
+        details: [
             {
                 title: "開発手法",
                 content: "Flutter",
@@ -87,7 +105,7 @@ const historyData = [
         month: "2",
         title: "品川ビジネスコンテスト(区民の部)　優秀賞受賞",
         subtitle: "風情ある旧東海道の品川区内部分をランニングコースとして活用するアイデアを応募",
-        detail: [
+        details: [
             {
                 title: "参加人数",
                 content: "3人",
@@ -113,7 +131,7 @@ const historyData = [
         month: "4",
         title: "本校事務室 一部の事務作業DXアプリ 開発開始",
         subtitle: "本校事務室の職員の方にヒアリングを実施することで見つけた一部の事務作業をDXするアプリ",
-        detail: [
+        details: [
             {
                 title: "参加人数",
                 content: "5人",
@@ -147,7 +165,7 @@ const historyData = [
         month: "5",
         title: "さいたまICTコンテスト2024 応募",
         subtitle: "Word2Vecというモデル群を活用した英単語学習アプリ「chaen」を開発し応募",
-        detail: [
+        details: [
             {
                 title: "参加人数",
                 content: "4人",
@@ -181,7 +199,7 @@ const historyData = [
         month: "6",
         title: "BeReal. リハーサル撮影アプリ「BeRehearsal.」開発開始",
         subtitle: "BeReal.の撮影をリハーサルできるアプリ",
-        detail: [
+        details: [
             {
                 title: "開発人数",
                 content: "個人",
@@ -207,7 +225,7 @@ const historyData = [
         month: "7",
         title: "置き勉管理アプリ「okiben」開発",
         subtitle: "置き勉の有無を教材ごとにスイッチのオン/オフで簡単に管理できるアプリ",
-        detail: [
+        details: [
             {
                 title: "開発人数",
                 content: "個人",
@@ -242,7 +260,7 @@ const historyData = [
             "「お正月をHackせよ」というテーマに対し、撮影した年賀状データからAIで俳句を作成し、カルタとして遊ぶアプリを開発",
             "画像データBase64にエンコードしGPT APIでAIに投げ俳句を生成"
         ],
-        detail: [
+        details: [
             {
                 title: "開発人数",
                 content: "4人",
@@ -268,4 +286,4 @@ const historyData = [
 
 
 
-export { profileDataMain, profileDataLeft, profileDataRight };
+export default historyData;
