@@ -14,7 +14,20 @@ export const style = `
 
 
 
-const ComponentWorkTile = ({ title, subtitle, image, year, month, isDateStart=false, kind, detailTitle, detailTiles, detailLinks }) => {
+const ComponentWorkTile = ({
+    title,
+    subtitle,
+    image,
+    year,
+    month,
+    isDateStart=false,
+    kind,
+    detailTitle,
+    detailTiles,
+    detailLinks,
+    isPlanData=false,
+    isNotCodeAllowed=false
+}) => {
     React.useEffect(() => {
         const styleSheet = document.createElement("style");
         styleSheet.innerText = style;
@@ -32,7 +45,12 @@ const ComponentWorkTile = ({ title, subtitle, image, year, month, isDateStart=fa
             onMouseLeave={handleMouseLeave}
             style={{
                 color: isHovered ? 'var(--common-main-color)' : 'var(--common-main-green-color)',
-                backgroundColor: isHovered ? 'var(--common-back-green-color)' : 'var(--common-back-color)',
+                backgroundColor:
+                    (isPlanData)
+                        ? 'white'
+                        : (isHovered)
+                            ? 'var(--common-back-green-color)'
+                            : 'var(--common-back-color)',
                 width: '290px',
                 textAlign: 'center',
                 borderRadius: '8px',
@@ -40,22 +58,32 @@ const ComponentWorkTile = ({ title, subtitle, image, year, month, isDateStart=fa
                 margin: '3px 3px 3px 3px',
                 display: 'flex',
                 flexDirection: 'column',
-                justifyContent: isHovered ? 'space-between' : 'space-between',
+                justifyContent: (isHovered) ? 'space-between' : 'space-between',
                 alignItems: 'center',
                 transition: 'transform 0.3s ease-in-out',
-                transform: isHovered ? 'scale(1.15)' : 'scale(1)',
-                zIndex: isHovered ? 10 : 1,
+                transform: (isHovered) ? 'scale(1.15)' : 'scale(1)',
+                zIndex: (isHovered) ? 10 : 1,
                 position: 'relative',
-                height: isHovered ? 'auto' : '300px',
+                height: (isHovered) ? 'auto' : '300px',
                 minHeight: '300px',
-                transformOrigin: 'top center'
+                transformOrigin: 'top center',
+                border: (isPlanData) ? '2px dashed var(--common-main-light2-color)' : 'none',
             }}
         >
             <div>
                 <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
                     <ComponentCategoryInfomation kind={kind} />
                 </div>
-                <h2 style={{ color: isHovered ? 'var(--common-main-green-color)' : 'var(--common-main-color)' }}>{title}</h2>
+                <h2
+                    style={{ color: isHovered ? 'var(--common-main-green-color)' : 'var(--common-main-color)' }}
+                >
+                    {title.split("\n").map((line, index) => (
+                        <React.Fragment key={index}>
+                            {line}
+                            {index !== title.split("\n").length - 1 && <br />}
+                        </React.Fragment>
+                    ))}
+                </h2>
                 <p style={{ fontSize: '85%', color: isHovered ? 'var(--common-main-green-color)' : 'var(--common-main-color)' }}>
                     {
                         (isDateStart)
@@ -82,9 +110,11 @@ const ComponentWorkTile = ({ title, subtitle, image, year, month, isDateStart=fa
                     ? <img
                         src={image}
                         alt="画像"
-                        style={{ width: 'auto', height: '65%' }}
+                        style={{ width: 'auto', height: '55%' }}
                     />
-                    : null
+                    : <div style={{ width: '100%', height: '55%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                        <p style={{ fontSize: "200%" }}>ー</p>
+                    </div>
                 : <div style={{
                     display: 'flex',
                     flexDirection: 'column',
@@ -101,6 +131,16 @@ const ComponentWorkTile = ({ title, subtitle, image, year, month, isDateStart=fa
                         {detailTiles}
                     </div>
                     {detailLinks}
+
+                    {isNotCodeAllowed &&
+                        <div style={{width: '100%'}}>
+                            <p
+                                style={{ fontSize: "30%", fontWeight: "600", color: "var(--common-main-green-light-color)"}}
+                            >
+                                ※ 許可未取得のため<br />GitHubリポジトリやソースコードは未掲載
+                            </p>
+                        </div>
+                    }
                 </div>
             }
         </div>

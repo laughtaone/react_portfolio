@@ -7,10 +7,7 @@ import { faAppStoreIos } from '@fortawesome/free-brands-svg-icons';
 
 
 // -------------------------------------------- 画像 --------------------------------------------
-// import ThumbnailChallenge from './thumbnail_images/challenge-app.png';
-// import Sushiwari from './thumbnail_images/sushiwari.png';
-// import ShinagawaRunners from './thumbnail_images/shinagawa-runners.png';
-import { ThumbnailChallenge, Sushiwari, ShinagawaRunners } from './thumbnail_images';
+import { ThumbnailChallenge, Sushiwari, ShinagawaRunners, OfficeDxApp, BeReehearsal, Okiben } from './thumbnail_images';
 // ---------------------------------------------------------------------------------------------
 
 
@@ -22,7 +19,8 @@ import { ThumbnailChallenge, Sushiwari, ShinagawaRunners } from './thumbnail_ima
 */
 
 
-const workData = [
+// 完成物データ
+export const workData = [
     {
         title: "挑戦応援アプリ",
         subtitle: "アプリ甲子園 | 個人",
@@ -127,6 +125,7 @@ const workData = [
     {
         title: "事務DXアプリ",
         subtitle: "5人",
+        image: OfficeDxApp,
         year: "2024",
         month: "4",
         kind: "app",
@@ -138,10 +137,12 @@ const workData = [
         year: "2024",
         month: "5",
         kind: "app",
+        isNotCodeAllowed: true
     },
     {
         title: "BeRehearsal.",
         subtitle: "個人",
+        image: BeReehearsal,
         kind: "app",
         year: "2024",
         month: "6",
@@ -150,6 +151,7 @@ const workData = [
     {
         title: "okiben",
         subtitle: "個人",
+        image: Okiben,
         kind: "app",
         year: "2024",
         month: "7",
@@ -160,9 +162,37 @@ const workData = [
         year: "2024",
         month: "12",
         kind: "app",
+        isNotCodeAllowed: true
     }
 ];
 
 
-
-export default workData;
+// 制作中or予定データ
+export const workPlanData = [
+    {
+        title: "クレジットカード\n支払管理アプリ",
+        subtitle: "個人",
+        year: "2024",
+        month: "8",
+        kind: "app-undone",
+        isDateStart: true,
+        detailTiles: [
+            {
+                title: "仮称",
+                content: "creeasy"
+            }
+        ]
+    },
+    {
+        title: "マッチングアプリ\n支援アプリ",
+        subtitle: "個人 | 実装未開始",
+        kind: "idea-phase",
+        isDateStart: true,
+    },
+    {
+        title: "学生支援アプリ",
+        subtitle: "個人 | 実装未開始",
+        kind: "idea-phase",
+        isDateStart: true,
+    },
+];

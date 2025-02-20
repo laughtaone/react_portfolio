@@ -47,7 +47,10 @@ const ComponentCategoryInfomation = ({
         <div
             style={{
                 padding: '4px 12px',
-                backgroundColor: "rgba(255, 255, 255, 0.75)",
+                backgroundColor:
+                    (kind!="app-undone")
+                    ? "rgba(255, 255, 255, 0.75)"
+                    : "rgba(245, 245, 255, 1)",
                 width: 'fit-content',
                 marginBottom: '3px',
                 textAlign: 'center',
@@ -59,19 +62,23 @@ const ComponentCategoryInfomation = ({
         >
             <div className="sns-tile-content">
                 <Icon style={{ fontSize: '140%' }} >{
-                    kind=="app"
+                    (kind=="app" || kind=="app-undone")
                         ? <CodeOutlined fontSize='100%' />
-                        : kind=="idea"
+                        : (kind=="idea" || kind=="idea-phase")
                             ? <EmojiObjectsOutlined />
                             : null
                 }</Icon>
                 <span style={{ marginLeft: 5, marginTop: 1, textAlign: 'center', width: '100%', fontSize: '85%'}}>{
                     kind=="app"
                         ? "開発"
-                        : kind=="idea"
-                            ? "アイデア"
-                            : null
-                }</span>
+                        : kind=="app-undone"
+                            ? "開発(未完成)"
+                            : kind=="idea"
+                                ? "アイデア"
+                                : kind=="idea-phase"
+                                    ? "アイデア段階"
+                                    : null
+                    }</span>
             </div>
         </div>
     );
