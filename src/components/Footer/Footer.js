@@ -3,27 +3,129 @@ import '../../App.css';
 import Icon from '@mui/material/Icon';
 import { FlagOutlined, PlaceOutlined, SchoolOutlined, TagOutlined } from '@mui/icons-material';
 import Spacer from '../../components/Spacer'
-import './Footer.css';
+// import './Footer.css';
+import { useState, useEffect } from "react";
 
+
+
+// ---------------- ヘッダーのCSS --------------------
+export const styles = `
+    .footer-top-link {
+        text-decoration: none;
+    }
+
+    .footer {
+        margin: 0;
+        background-color: var(--common-back-color);
+        color: var(--common-main-color);
+        padding: 20px 25px 30px 25px;
+        // height: var(--footer-height);
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    }
+
+    .footer-aws-list {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 6px 5px;
+        border-radius: 5px;
+        list-style-type: none;
+        text-align: center;
+        background-color: var(--common-back-deep-color)
+    }
+
+    .footer-aws-list-p {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .container-space-between {
+        // display: flex;
+        // flex-direction: column;
+        // justify-content: space-between;
+        // height: 100%;
+    }
+
+    .footer-aws-icon {
+        margin-right: 3px;
+    }
+`;
+// -------------------------------------------------
 
 
 
 
 const Footer = () => {
+    // スタイルを動的に適用
+    React.useEffect(() => {
+        const styleSheet = document.createElement("style");
+        styleSheet.innerText = styles;
+        document.head.appendChild(styleSheet);
+        return () => styleSheet.remove();
+    }, []);
+
+    const [isDesktop, setIsMobile] = useState(window.innerWidth > 767);
+    useEffect(() => {
+        const handleResize = () => setIsMobile(window.innerWidth > 767);
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
+
+    const [isOpen, setIsOpen] = useState(false);
+    const [isHoverMenu, setIsHoverMenu] = useState(false);
+
+
     return (
-        <footer className="footer">
-            <div className="container-space-between">
+        <footer
+            className="footer"
+            style={{
+                display: (isDesktop) ? 'flex' : 'null',
+                justifyContent: 'space-between',
+                height: (isDesktop) ? 'var(--footer-height)' : 'auto',
+            }}
+        >
+            <div
+                // className="container-space-between"
+                style={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: (isDesktop) ? 'space-between' : 'null',
+                    height: '100%'
+                }}
+            >
                 <div>
                     <h1 style={{margin: '3px 0'}}><a href="/" className='footer-top-link'>USUBA Taichi</a></h1>
                     <h3 style={{margin: '3px 0'}}>ポートフォリオサイト</h3>
                 </div>
                 <p><a href="/" className='footer-top-link'>thinleaf.com</a></p>
             </div>
-            <div className="container-space-between" style={{textAlign: 'right'}}>
+
+            <Spacer height={30} />
+
+            <div
+                className="container-space-between"
+                style={{
+                    textAlign: (isDesktop) ? 'right' : 'null',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: (isDesktop) ? 'space-between' : 'null',
+                    height: '100%'
+                }}
+            >
                 <div>
                     <h3 style={{margin: '3px 0'}}>当サイトはReactおよびAWSを用いて構築・運営しています</h3>
-                    <Spacer height={7} />
-                    <div className='footer-aws-list'>
+                    <Spacer height={5} />
+                    <div
+                        className='footer-aws-list'
+                        style={{
+                            // marginLeft: (isDesktop) ? 'auto' : '0',
+                            margin: (isDesktop) ? '0 0 0 auto' : 'auto',
+                            maxWidth: (isDesktop) ? '50%' : '60%',
+                        }}
+                    >
                         <p className='footer-aws-list-p'>
                             <Icon className='footer-aws-icon'><PlaceOutlined /></Icon>
                             リージョン　東京リージョン
@@ -33,8 +135,11 @@ const Footer = () => {
                         </p>
                     </div>
                 </div>
+
+                <Spacer height={30} />
+
                 <p>当サイトの設計については <a href="aboutthissite">こちら</a></p>
-            </div> 
+            </div>
         </footer>
     );
 };
