@@ -1,7 +1,6 @@
 .hello-world {
     margin: 5px 0;
     transition: font-size 0.3s ease, content 0.3s ease;
-    display: inline-block;
     font-size: 2.2em;
 }
 
