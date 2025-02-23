@@ -24,29 +24,33 @@ import { faAppStoreIos } from '@fortawesome/free-brands-svg-icons';
 const profileDataMain = [
     {
         title: "学校",
-        icon: <SchoolOutlined />,
+        icon: <SchoolOutlined className='profile-title-icon' />,
         text: "東京都立産業技術高等専門学校 ものづくり工学科 情報システム工学コース"
     },
     {
         title: "趣味",
-        icon: <PaletteOutlined />,
+        icon: <PaletteOutlined className='profile-title-icon' />,
         text: "音楽鑑賞",
-        detail: "Official髭男dism, Mrs. GREEN APPLE"
+        detail: <ul style={{ textAlign: "left" }}>
+            <li>Official髭男dism, Mrs. GREEN APPLE</li>
+            <li>開発使用経験あり：Firebase, AWS, React</li>
+            <li>触った程度や学習途上：Rust, Swift</li>
+        </ul>
     },
     {
         title: "学習/使用経験のある技術",
         subtitle: "(程度問わず)",
-        icon: <ConstructionOutlined />,
+        icon: <ConstructionOutlined className='profile-title-icon' />,
         text: "Flutter/Dart, Firebase, Python, AWS, React, Swift, Rust",
         detail: <ul style={{ textAlign: "left" }}>
             <li>日常的に学習/使用：Flutter/Dart, Python</li>
-            <li>開発使用経験あり：Firebase, AWS, React, Swift</li>
-            <li>触った程度：Rust</li>
+            <li>開発使用経験あり：Firebase, AWS, React</li>
+            <li>触った程度や学習途上：Rust, Swift</li>
         </ul>
     },
     {
         title: "好きなアプリUI",
-        icon: <BrushOutlined />,
+        icon: <BrushOutlined className='profile-title-icon' />,
         text: "Apple Music, PayPay, 三井住友銀行",
         detail: <div style={{ textAlign: "left" }}>
             <p style={{ color: "var(--common-main-green-color)" }}>【特に好きな部分】</p>
@@ -62,7 +66,7 @@ const profileDataMain = [
 const profileDataLeft = [
     {
         title: "SNS等",
-        icon: <LanguageOutlined />,
+        icon: <LanguageOutlined className='profile-title-icon' />,
         text: <div>
             <ComponentSnsTile
                 icon="github"
@@ -94,32 +98,32 @@ const profileDataLeft = [
 const profileDataRight = [
     {
         title: "MBTI",
-        icon: <FavoriteBorderOutlined />,
+        icon: <FavoriteBorderOutlined className='profile-title-icon' />,
         text: "INFJ (提唱者)"
     },
     {
         title: "ゼミナールでの学習テーマ",
-        icon: <ScienceOutlined />,
+        icon: <ScienceOutlined className='profile-title-icon' />,
         text: "PythonやKaggleを用いたデータ分析手法学習"
     },
     {
         title: "学生生活で印象に残ったこと",
-        icon: <StarBorderOutlined />,
+        icon: <StarBorderOutlined className='profile-title-icon' />,
         text: "Hack Uへの参加・研修旅行"
     },
     {
         title: "資格",
-        icon: <LocalPoliceOutlined />,
+        icon: <LocalPoliceOutlined className='profile-title-icon' />,
         text: "（2025.3 受験予定：実用数学技能検定(数検) 2級）"
     },
     {
         title: "中学時代の部活動",
-        icon: <FitnessCenterOutlined />,
+        icon: <FitnessCenterOutlined className='profile-title-icon' />,
         text: "バスケットボール部"
     },
     {
         title: "現在の夢",
-        icon: <FlagOutlined />,
+        icon: <FlagOutlined className='profile-title-icon' />,
         text: <div>
             <p>自分がプライベートで開発したアプリが</p>
             <p>AppStoreのランキングに載ること</p>

@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import Header from '../../components/Header/Header';
+import React, { useEffect, useState } from 'react';
+import Header, { headerStyles } from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import ComponentPageTitle from '../../components/PageTitle';
 import ComponentProfileTile from './ComponentProfileTile';
@@ -13,9 +13,35 @@ import { profileDataLeft, profileDataMain, profileDataRight } from './ProfileDat
 
 
 
+// ---------------------- CSS ----------------------
+export const styles = `
+    .profile-title-icon {
+        font-size: 22px;
+    }
+`;
+// -------------------------------------------------
+
+
+
+
 
 const Profile = () => {
     PageName("プロフィール");
+
+    // スタイルを動的に適用
+    React.useEffect(() => {
+        const styleSheet = document.createElement("style");
+        styleSheet.innerText = styles;
+        document.head.appendChild(styleSheet);
+        return () => styleSheet.remove();
+    }, []);
+
+    const [isDesktop, setIsMobile] = useState(window.innerWidth > 767);
+    useEffect(() => {
+        const handleResize = () => setIsMobile(window.innerWidth > 767);
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
 
 
     return (<>
@@ -23,13 +49,27 @@ const Profile = () => {
         <CenteredContainer>
             <ComponentPageTitle title="プロフィール" />
 
-            <div style={{ display: 'flex' }}>
+            <div style={{
+                display: (isDesktop) ? 'flex' : 'block'
+            }}>
                 {/* --------------------------------------- プロフィール 画像 -------------------------------------- */}
-                <div style={{ flex: 1, justifyContent: 'center', padding: '0 10px'}}>
+                <div style={{
+                    flex: 1,
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: (isDesktop) ? 'start' : 'center',
+                    padding: '0 10px',
+                    width: '100%'
+                }}>
                     <img
                         src={profileIcon}
                         alt="Logo"
-                        style={{ width: '100%', height: 'auto', borderRadius: "50%", objectFit: "cover" }}
+                        style={{
+                            width: (isDesktop) ? '100%' : '30%',
+                            height: 'auto',
+                            borderRadius: "50%",
+                            objectFit: "cover"
+                        }}
                     />
                 </div>
                 {/* --------------------------------------------------------------------------------------------- */}
@@ -56,9 +96,16 @@ const Profile = () => {
                         />
                     ))}
 
-                    <div style={{ display: 'flex', width: '100%' }}>
+                    <div style={{
+                        display: (isDesktop) ? 'flex' : 'block',
+                        width: '100%'
+                    }}>
                         {/* 左側の要素 */}
-                        <div style={{ display: 'flex', flexDirection: 'column', width: '40%' }}>
+                        <div style={{
+                            display: (isDesktop) ? 'flex' : 'block',
+                            flexDirection: 'column',
+                            width: (isDesktop) ? '40%' : '100%'
+                        }}>
                         {profileDataLeft.map((item, index) => (
                             <ComponentProfileTile
                                 key={index}
@@ -72,7 +119,12 @@ const Profile = () => {
                         </div>
 
                         {/* 右側のColumnに当たる要素 */}
-                        <div style={{ display: 'flex', flexDirection: 'column', marginLeft: 10, width: '60%' }}>
+                        <div style={{
+                            display: (isDesktop) ? 'flex' : 'block',
+                            flexDirection: 'column',
+                            marginLeft: (isDesktop) ? 10 : 0,
+                            width: (isDesktop) ? '60%' : '100%'
+                        }}>
                             {profileDataRight.map((item, index) => (
                                 <ComponentProfileTile
                                     key={index}

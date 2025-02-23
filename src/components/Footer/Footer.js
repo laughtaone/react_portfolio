@@ -74,15 +74,11 @@ const Footer = () => {
         return () => window.removeEventListener("resize", handleResize);
     }, []);
 
-    const [isOpen, setIsOpen] = useState(false);
-    const [isHoverMenu, setIsHoverMenu] = useState(false);
-
-
     return (
         <footer
             className="footer"
             style={{
-                display: (isDesktop) ? 'flex' : 'null',
+                display: (isDesktop) ? 'flex' : 'block',
                 justifyContent: 'space-between',
                 height: (isDesktop) ? 'var(--footer-height)' : 'auto',
             }}
@@ -92,7 +88,7 @@ const Footer = () => {
                 style={{
                     display: 'flex',
                     flexDirection: 'column',
-                    justifyContent: (isDesktop) ? 'space-between' : 'null',
+                    justifyContent: (isDesktop) ? 'space-between' : 'center',
                     height: '100%'
                 }}
             >
@@ -108,26 +104,26 @@ const Footer = () => {
             <div
                 className="container-space-between"
                 style={{
-                    textAlign: (isDesktop) ? 'right' : 'null',
+                    textAlign: (isDesktop) ? 'right' : 'left',
                     display: 'flex',
                     flexDirection: 'column',
-                    justifyContent: (isDesktop) ? 'space-between' : 'null',
+                    justifyContent: (isDesktop) ? 'space-between' : 'center',
                     height: '100%'
                 }}
             >
                 <div>
-                    <h3 style={{margin: '3px 0'}}>当サイトはReactおよびAWSを用いて構築・運営しています</h3>
+                    <h3 style={{margin: '3px 0', fontSize: '17px'}}>当サイトはReactおよびAWSを用いて構築・運営しています</h3>
                     <Spacer height={5} />
                     <div
                         className='footer-aws-list'
                         style={{
                             // marginLeft: (isDesktop) ? 'auto' : '0',
                             margin: (isDesktop) ? '0 0 0 auto' : 'auto',
-                            maxWidth: (isDesktop) ? '50%' : '60%',
+                            maxWidth: '260px'
                         }}
                     >
                         <p className='footer-aws-list-p'>
-                            <Icon className='footer-aws-icon'><PlaceOutlined /></Icon>
+                            <Icon className='footer-aws-icon'><PlaceOutlined style={{fontSize: '22px'}} /></Icon>
                             リージョン　東京リージョン
                         </p>
                         <p className='footer-aws-list-p' style={{fontSize: '90%'}}>

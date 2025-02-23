@@ -280,7 +280,8 @@ const historyData = [
     {
         year: "2025",
         month: "1",
-        title: "Swift 学習開始"
+        title: "Swift 学習開始",
+        subtitle: "試験・卒研・検定受験・就職活動準備などで忙しいが、少しずつ学習中"
     }
 ];
 

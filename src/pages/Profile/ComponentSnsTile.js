@@ -31,6 +31,10 @@ export const style = `
         color: var(--common-main-color);
         font-weight: bold;
     }
+
+    .sns-icon {
+        font-size: 22px;
+    }
 `;
 // -------------------------------------------------
 
@@ -71,7 +75,7 @@ const ComponentSnsTile = ({
                 href={url}
                 target="_blank" rel="noopener noreferrer"
                 style={{
-                    padding: isMiniSize ? '3px 18px' : '6px 23px',
+                    padding: isMiniSize ? '7px 18px' : '10px 23px',
                     backgroundColor: isHovered ? (customHoverBackColor ?? 'var(--common-back-deep2-color') : (customBackColor ?? 'var(--common-back-deep-color)'),
                     width: isFullWidth ? 'null' : 'fit-content',
                     marginBottom: needsBottomMargin ? '5px' :'0px'
@@ -81,17 +85,16 @@ const ComponentSnsTile = ({
                 onMouseLeave={handleMouseLeave}
             >
                 <div className="sns-tile-content">
-                    <Icon style={{ paddingTop: 2, paddingBottom: 2 }} >{
-                        icon=="file"
-                            ? <AttachFileOutlined />
-                            : icon=="github"
-                                ? <GitHub />
-                                : icon=="youtube"
-                                    ? <YouTube />
-                                    : icon=="appstore"
-                                        ? icon=<div style={{ display: 'flex', alignItems: 'center' }}><FontAwesomeIcon icon={faAppStoreIos} /></div>
-                                        : icon
-                    }</Icon>
+                    {icon=="file"
+                        ? <AttachFileOutlined className='sns-icon' />
+                        : icon=="github"
+                            ? <GitHub className='sns-icon' />
+                            : icon=="youtube"
+                                ? <YouTube className='sns-icon' />
+                                : icon=="appstore"
+                                    ? icon=<div style={{ display: 'flex', alignItems: 'center' }}><FontAwesomeIcon icon={faAppStoreIos} className='sns-icon'/></div>
+                                    : icon
+                    }
                     <span style={{ marginLeft: 5, textAlign: 'center', width: '100%' }}>{title}</span>
                 </div>
             </a>
