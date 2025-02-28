@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 
 function PageName(title) {
     useEffect(() => {
-        document.title = `${title} | thinleaf.com`;
+        document.title = `${title} | thinleaf.net`;
     }, [title]);
 }
 

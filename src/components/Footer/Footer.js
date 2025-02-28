@@ -96,7 +96,7 @@ const Footer = () => {
                     <h1 style={{margin: '3px 0'}}><a href="/" className='footer-top-link'>USUBA Taichi</a></h1>
                     <h3 style={{margin: '3px 0'}}>ポートフォリオサイト</h3>
                 </div>
-                <p><a href="/" className='footer-top-link'>thinleaf.com</a></p>
+                <p><a href="/" className='footer-top-link'>thinleaf.net</a></p>
             </div>
 
             <Spacer height={30} />

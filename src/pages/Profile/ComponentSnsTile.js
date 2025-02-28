@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Icon from '@mui/material/Icon';
 import '../../App.css';
-import { AttachFileOutlined, GitHub, YouTube } from '@mui/icons-material';
+import { AttachFileOutlined, GitHub, LanguageOutlined, YouTube } from '@mui/icons-material';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAppStoreIos } from '@fortawesome/free-brands-svg-icons';
 
@@ -47,9 +47,11 @@ const ComponentSnsTile = ({
     needsRightPadding=false,
     needsBottomMargin=true,
     isMiniSize=false,
-    customBackColor,
-    customHoverBackColor,
-    isFullWidth=true
+    customMainColor="var(--common-main-color)",
+    customBackColor="var(--common-back-deep-color)",
+    customHoverBackColor="var(--common-back-deep2-color",
+    isFullWidth=true,
+    isPreparing=false
 }) => {
     React.useEffect(() => {
         const styleSheet = document.createElement("style");
@@ -72,11 +74,15 @@ const ComponentSnsTile = ({
     return (
         <div style={{marginRight: needsRightPadding ? 5 : 0, fontSize: isMiniSize ? '90%' : null}}>
             <a
-                href={url}
+                href={(isPreparing) ? null : url}
                 target="_blank" rel="noopener noreferrer"
                 style={{
                     padding: isMiniSize ? '7px 18px' : '10px 23px',
-                    backgroundColor: isHovered ? (customHoverBackColor ?? 'var(--common-back-deep2-color') : (customBackColor ?? 'var(--common-back-deep-color)'),
+                    backgroundColor: (isPreparing)
+                        ? '#f9f9f9'
+                        : (isHovered)
+                            ? customHoverBackColor
+                            : customBackColor,
                     width: isFullWidth ? 'null' : 'fit-content',
                     marginBottom: needsBottomMargin ? '5px' :'0px'
                 }}
@@ -86,16 +92,37 @@ const ComponentSnsTile = ({
             >
                 <div className="sns-tile-content">
                     {icon=="file"
-                        ? <AttachFileOutlined className='sns-icon' />
+                        ? <AttachFileOutlined className='sns-icon' style={{color: (isPreparing) ? '#a0a0a0' : customMainColor}} />
                         : icon=="github"
-                            ? <GitHub className='sns-icon' />
+                            ? <GitHub className='sns-icon' style={{color: (isPreparing) ? '#a0a0a0' : customMainColor}} />
                             : icon=="youtube"
-                                ? <YouTube className='sns-icon' />
+                                ? <YouTube className='sns-icon' style={{color: (isPreparing) ? '#a0a0a0' : customMainColor}} />
                                 : icon=="appstore"
-                                    ? icon=<div style={{ display: 'flex', alignItems: 'center' }}><FontAwesomeIcon icon={faAppStoreIos} className='sns-icon'/></div>
-                                    : icon
+                                    ? icon=<div style={{ display: 'flex', alignItems: 'center' }}><FontAwesomeIcon icon={faAppStoreIos} className='sns-icon' style={{color: (isPreparing) ? '#a0a0a0' : customMainColor}}/></div>
+                                    : icon=="url"
+                                        ? <LanguageOutlined className='sns-icon' style={{color: (isPreparing) ? '#a0a0a0' : customMainColor}} />
+                                        : icon
                     }
-                    <span style={{ marginLeft: 5, textAlign: 'center', width: '100%' }}>{title}</span>
+                    <span
+                        style={{
+                            marginLeft: 5,
+                            textAlign: 'center',
+                            width: '100%',
+                            color: (isPreparing)
+                                ? (isHovered)
+                                    ? "#df2046"
+                                    :  '#a0a0a0'
+                                : customMainColor
+                            }}
+                    >
+                        {
+                            (isPreparing)
+                                ? (isHovered)
+                                    ? "　".repeat(Math.floor(title.length / 3)) + "掲載準備中" + "　".repeat(Math.floor(title.length / 3))
+                                    : title
+                                : title
+                        }
+                    </span>
                 </div>
             </a>
         </div>

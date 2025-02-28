@@ -26,7 +26,7 @@ const ComponentWorkTile = ({
     detailTiles,
     detailLinks,
     isPlanData=false,
-    isNotCodeAllowed=false
+    isNotCodeAllowed=false,
 }) => {
     React.useEffect(() => {
         const styleSheet = document.createElement("style");
@@ -47,7 +47,9 @@ const ComponentWorkTile = ({
                 color: isHovered ? 'var(--common-main-color)' : 'var(--common-main-green-color)',
                 backgroundColor:
                     (isPlanData)
-                        ? 'white'
+                        ? (isHovered)
+                            ? '#FBFFF9'
+                            : 'white'
                         : (isHovered)
                             ? 'var(--common-back-green-color)'
                             : 'var(--common-back-color)',
@@ -67,12 +69,16 @@ const ComponentWorkTile = ({
                 height: (isHovered) ? 'auto' : '300px',
                 minHeight: '300px',
                 transformOrigin: 'top center',
-                border: (isPlanData) ? '2px dashed var(--common-main-light2-color)' : 'none',
+                border: (isPlanData)
+                    ? (isHovered)
+                        ? '2px dashed var(--common-main-green-color)'
+                        : '2px dashed var(--common-main-light2-color)'
+                    : 'none',
             }}
         >
             <div>
                 <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-                    <ComponentCategoryInfomation kind={kind} />
+                    <ComponentCategoryInfomation kind={kind} isHovered={isHovered} />
                 </div>
                 <h2
                     style={{ color: isHovered ? 'var(--common-main-green-color)' : 'var(--common-main-color)' }}
@@ -133,9 +139,9 @@ const ComponentWorkTile = ({
                     {detailLinks}
 
                     {isNotCodeAllowed &&
-                        <div style={{width: '100%'}}>
+                        <div style={{width: '100%', marginTop: '10px'}}>
                             <p
-                                style={{ fontSize: "30%", fontWeight: "600", color: "var(--common-main-green-light-color)"}}
+                                style={{ fontSize: "70%", fontWeight: "600", color: "var(--common-main-green-color)"}}
                             >
                                 ※ 許可未取得のため<br />GitHubリポジトリやソースコードは未掲載
                             </p>

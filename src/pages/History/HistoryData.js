@@ -4,6 +4,7 @@ import ComponentSnsTile, { style } from '../Profile/ComponentSnsTile';
 import { BrushOutlined, ConstructionOutlined, FavoriteBorderOutlined, FitnessCenterOutlined, FlagOutlined, GitHub, LanguageOutlined, LocalPolice, LocalPoliceOutlined, PaletteOutlined, SchoolOutlined, ScienceOutlined, StarBorderOutlined, VerifiedOutlined, X } from '@mui/icons-material';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAppStoreIos } from '@fortawesome/free-brands-svg-icons';
+import { icon } from '@fortawesome/fontawesome-svg-core';
 
 
 
@@ -87,18 +88,21 @@ const historyData = [
         ],
         links: [
             {
-                icon: "file",
-                title: "HackU紹介ページ",
+                icon: "url",
+                title: "HackU 該当開催ページ",
+                url: "https://hacku.yahoo.co.jp/cit2023/"
             },
             {
                 icon: "youtube",
-                title: "HackU発表時の映像",
+                title: "私が担当した発表時の映像",
+                url: "https://youtu.be/6QKCmR5b67k?si=B4RZ-grU5XyHZd_l&t=1129"
             },
             {
                 icon: "github",
                 title: "GitHubリポジトリ",
+                isPreparing: true
             }
-        ],
+        ]
     },
     {
         year: "2024",
@@ -118,13 +122,15 @@ const historyData = [
         links: [
             {
                 icon: "file",
-                title: "受賞紹介ページ",
+                title: "アイデア資料",
+                url: "https://drive.google.com/file/d/1ZqPzamUihgW-Phz0wLCiseVvOyL9qYwf/view?usp=sharing"
             },
             {
-                icon: "file",
-                title: "アイデア資料",
+                icon: "url",
+                title: "受賞紹介ページ",
+                url: "https://www.metro-cit.ac.jp/page_00810.html"
             }
-        ],
+        ]
     },
     {
         year: "2024",
@@ -148,17 +154,26 @@ const historyData = [
         links: [
             {
                 icon: "file",
-                title: "デモページ",
+                title: "概要紹介資料(開発途中の8月時点)",
+                url: "https://drive.google.com/file/d/1IRm9Dk-254WiM78np4HR5sS0csNxIbjL/view?usp=sharing"
+            },
+            {
+                icon: "file",
+                title: "Firebase構造資料",
+                url: "https://drive.google.com/file/d/1ZJlKbuDSyCdn_6vSUWkrTblQaUBu2ASP/view?usp=sharing"
             },
             {
                 icon: "github",
                 title: "GitHubリポジトリ(デモ用)",
+                url: "https://www.metro-cit.ac.jp/page_00810.html",
+                isPreparing: true
             },
             {
-                icon: "file",
-                title: "ヒアリング資料",
+                icon: "url",
+                title: "デモページ",
+                isPreparing: true
             }
-        ],
+        ]
     },
     {
         year: "2024",
@@ -180,17 +195,14 @@ const historyData = [
             },
             {
                 title: "担当",
-                content: "UIアイデア作成, UI実装",
+                content: "UIアイデア作成, フロントエンド全般"
             }
         ],
         links: [
             {
-                icon: "file",
-                title: "応募資料",
-            },
-            {
-                icon: "file",
-                title: "アプリ紹介資料",
+                icon: "url",
+                title: "さいたまICTコンテストとは",
+                url: "https://www.sisia.or.jp/hpc/"
             }
         ]
     },
@@ -211,12 +223,20 @@ const historyData = [
         ],
         links: [
             {
-                icon: "github",
-                title: "GitHubリポジトリ",
+                icon: "appstore",
+                title: "AppStoreリンク",
+                url: "https://apps.apple.com/jp/app/berehearsal/id6742497007"
             },
             {
-                icon: "appstore",
-                title: "AppStoreページ",
+                icon: "github",
+                title: "GitHubリポジトリ",
+                url: "https://www.metro-cit.ac.jp/page_00810.html",
+                isPreparing: true
+            },
+            {
+                icon: "url",
+                title: "公開ページ",
+                url: "https://laughtaone.notion.site/BeRehearsal-1a6b5b939081808c8fc8dac8877eef7c?pvs=4",
             }
         ]
     },
@@ -237,12 +257,14 @@ const historyData = [
         ],
         links: [
             {
-                icon: "github",
-                title: "GitHubリポジトリ",
+                icon: "file",
+                title: "レポート資料",
+                url: "https://drive.google.com/file/d/1GNJnzMK8vGjVepiX3-yNJx9HTRlTE8Z_/view?usp=sharing"
             },
             {
-                icon: "appstore",
-                title: "AppStoreページ",
+                icon: "github",
+                title: "GitHubリポジトリ",
+                isPreparing: true
             }
         ]
     },
@@ -268,12 +290,27 @@ const historyData = [
             {
                 title: "開発手法",
                 content: "Flutter, GPT API",
+            },
+            {
+                title: "担当",
+                content: "UIアイデア設計, UIや画面遷移などフロントエンド部分"
             }
         ],
         links: [
             {
                 icon: "file",
-                title: "アプリ紹介資料"
+                title: "アプリ紹介資料",
+                isPreparing: true
+            },
+            {
+                icon: "url",
+                title: "HackU 該当開催ページ",
+                url: "https://hacku.yahoo.co.jp/kosen2024/"
+            },
+            {
+                icon: "youtube",
+                title: "他メンバーによる発表時の映像",
+                url: "https://youtu.be/cjHVZzAWpZ0?si=2tIjCM_vcuOvqi_Q&t=1848"
             }
         ]
     },

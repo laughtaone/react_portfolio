@@ -24,7 +24,8 @@ export const style = `
 
 
 const ComponentCategoryInfomation = ({
-    kind
+    kind,
+    isHovered=false
 }) => {
     React.useEffect(() => {
         const styleSheet = document.createElement("style");
@@ -33,42 +34,32 @@ const ComponentCategoryInfomation = ({
         return () => styleSheet.remove();
     }, []);
 
-
-    const [isHovered, setIsHovered] = useState(false);
-    const handleMouseEnter = () => {
-        setIsHovered(true);
-    };
-    const handleMouseLeave = () => {
-        setIsHovered(false);
-    };
-
-
     return (
         <div
             style={{
                 padding: '4px 12px',
                 backgroundColor:
-                    (kind!="app-undone")
+                    (kind!="app-undone" && kind!="idea-phase")
                     ? "rgba(255, 255, 255, 0.75)"
-                    : "rgba(245, 245, 255, 1)",
+                    : (isHovered)
+                        ? "#EBFFE0"
+                        : "rgba(245, 245, 255, 1)",
                 width: 'fit-content',
                 marginBottom: '3px',
                 textAlign: 'center',
                 borderRadius: '50px',
                 alignItems: 'center',
             }}
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
         >
             <div className="sns-tile-content">
-                <Icon style={{ fontSize: '140%' }} >{
+                <Icon style={{ fontSize: '140%', color: (isHovered) ? 'var(--common-main-green-color)' : 'var(--common-main-color)'}} >{
                     (kind=="app" || kind=="app-undone")
-                        ? <CodeOutlined fontSize='100%' />
+                        ? <CodeOutlined fontSize='100%'  />
                         : (kind=="idea" || kind=="idea-phase")
-                            ? <EmojiObjectsOutlined />
+                            ? <EmojiObjectsOutlined  />
                             : null
                 }</Icon>
-                <span style={{ marginLeft: 5, marginTop: 1, textAlign: 'center', width: '100%', fontSize: '85%'}}>{
+                <span style={{ marginLeft: 5, marginTop: 1, textAlign: 'center', width: '100%', fontSize: '85%', color: (isHovered) ? 'var(--common-main-green-color)' : 'var(--common-main-color)'}}>{
                     kind=="app"
                         ? "開発"
                         : kind=="app-undone"

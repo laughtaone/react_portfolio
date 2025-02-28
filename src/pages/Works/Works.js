@@ -53,9 +53,12 @@ const Works = () => {
                         isDateStart={item.isDateStart}
                         detailTitle={
                             (typeof item.detailTitle === 'string')
-                            ? item.detailTitle
+                            ? <p style={{color: 'var(--common-main-green-color)'}}>{item.detailTitle}</p>
                             : (Array.isArray(item.detailTitle))
-                                ? <>{item.detailTitle.map((text, index) => <p key={index}>{text}</p>)}</>
+                                ? <>{item.detailTitle.map((text, index) => <p
+                                    key={index}
+                                    style={{color: 'var(--common-main-green-color)', marginBottom: '6px'}}
+                                >{text}</p>)}</>
                                 : null
                         }
                         detailTiles={
@@ -81,6 +84,7 @@ const Works = () => {
                                         icon={link.icon}
                                         title={link.title}
                                         url={link.url}
+                                        isPreparing={link.isPreparing}
                                     />
                                 ))}</>
                                 : null
@@ -127,7 +131,11 @@ const Works = () => {
                             (typeof item.detailTitle === 'string')
                             ? item.detailTitle
                             : (Array.isArray(item.detailTitle))
-                                ? <>{item.detailTitle.map((text, index) => <p key={index}>{text}</p>)}</>
+                                ? <>{item.detailTitle.map((text, index) => <p
+                                    key={index} style={{ color: 'var(--common-main-green-color)', marginBottom: '6px' }}
+                                >
+                                    {text}
+                                </p>)}</>
                                 : null
                         }
                         detailTiles={
@@ -153,6 +161,7 @@ const Works = () => {
                                         icon={link.icon}
                                         title={link.title}
                                         url={link.url}
+                                        isPreparing={link.isPreparing}
                                     />
                                 ))}</>
                                 : null

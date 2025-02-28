@@ -31,11 +31,7 @@ const profileDataMain = [
         title: "趣味",
         icon: <PaletteOutlined className='profile-title-icon' />,
         text: "音楽鑑賞",
-        detail: <ul style={{ textAlign: "left" }}>
-            <li>Official髭男dism, Mrs. GREEN APPLE</li>
-            <li>開発使用経験あり：Firebase, AWS, React</li>
-            <li>触った程度や学習途上：Rust, Swift</li>
-        </ul>
+        detail: "Official髭男dism, Mrs. GREEN APPLE"
     },
     {
         title: "学習/使用経験のある技術",
@@ -125,7 +121,7 @@ const profileDataRight = [
         title: "現在の夢",
         icon: <FlagOutlined className='profile-title-icon' />,
         text: <div>
-            <p>自分がプライベートで開発したアプリが</p>
+            <p>プライベートで開発した自分のアプリが</p>
             <p>AppStoreのランキングに載ること</p>
         </div>,
         detail: "1つの大きな目標を掲げた方が頑張れるため"

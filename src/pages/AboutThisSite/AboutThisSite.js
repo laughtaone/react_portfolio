@@ -15,7 +15,7 @@ const AboutThisSite = () => {
         <Header />
         <CenteredContainer>
             <ComponentPageTitle title="当サイト説明" />
-            <p>AboutThisSite</p>
+            <p>当サイト説明は、現在準備中です。</p>
         </CenteredContainer>
         <Footer />
     </>);
