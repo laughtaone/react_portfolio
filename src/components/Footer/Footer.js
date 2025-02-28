@@ -127,7 +127,7 @@ const Footer = () => {
                             リージョン　東京リージョン
                         </p>
                         <p className='footer-aws-list-p' style={{fontSize: '90%'}}>
-                            （ AZ　?個目/2個中 ）
+                            （ AZ　1個目/2個中 ）
                         </p>
                     </div>
                 </div>
