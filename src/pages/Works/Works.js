@@ -23,6 +23,7 @@ const Works = () => {
             <ComponentPageTitle title="制作物" />
 
             {/* ----------------------------------------- 制作物要素開始 ---------------------------------------- */}
+            <h2 style={{textAlign: 'center', marginBottom: '50px'}}>- 完了したプロジェクト -</h2>
             <div style={{
                 display: 'flex',
                 flexWrap: 'wrap',
@@ -100,6 +101,7 @@ const Works = () => {
             <Spacer height={100} />
 
             {/* --------------------------------------- 制作物予定要素開始 -------------------------------------- */}
+            <h2 style={{textAlign: 'center', marginBottom: '50px'}}>- 現在進行中のプロジェクト -</h2>
             <div style={{
                 display: 'flex',
                 flexWrap: 'wrap',

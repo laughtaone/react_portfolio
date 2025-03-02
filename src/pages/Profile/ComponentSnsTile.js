@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import Icon from '@mui/material/Icon';
 import '../../App.css';
 import { AttachFileOutlined, GitHub, LanguageOutlined, YouTube } from '@mui/icons-material';
@@ -69,21 +69,34 @@ const ComponentSnsTile = ({
         setIsHovered(false);
     };
 
+    const divRef = useRef(null);
+    const [initialWidth, setInitialWidth] = useState(null);
+    useEffect(() => {
+        if (divRef.current) {
+            setInitialWidth(divRef.current.offsetWidth);
+        }
+    }, []);
+
+
 
 
     return (
-        <div style={{marginRight: needsRightPadding ? 5 : 0, fontSize: isMiniSize ? '90%' : null}}>
+        <div style={{marginRight: needsRightPadding ? 5 : 0, fontSize: isMiniSize ? '90%' : null}} ref={divRef}>
             <a
                 href={(isPreparing) ? null : url}
-                target="_blank" rel="noopener noreferrer"
+                target="_blank"
+                rel="noopener noreferrer"
                 style={{
-                    padding: isMiniSize ? '7px 18px' : '10px 23px',
+                    padding: isMiniSize ? '8px 15px' : '11px 20px',
                     backgroundColor: (isPreparing)
                         ? '#f9f9f9'
                         : (isHovered)
                             ? customHoverBackColor
                             : customBackColor,
-                    width: isFullWidth ? 'null' : 'fit-content',
+                    // width: isFullWidth ? 'null' : 'fit-content',
+                    width: (initialWidth)
+                        ? `${initialWidth}px`
+                        : 'fit-content',
                     marginBottom: needsBottomMargin ? '5px' :'0px'
                 }}
                 className="sns-tile-container"
@@ -105,7 +118,7 @@ const ComponentSnsTile = ({
                     }
                     <span
                         style={{
-                            marginLeft: 5,
+                            marginLeft: 0,
                             textAlign: 'center',
                             width: '100%',
                             color: (isPreparing)
@@ -118,7 +131,7 @@ const ComponentSnsTile = ({
                         {
                             (isPreparing)
                                 ? (isHovered)
-                                    ? "　".repeat(Math.floor(title.length / 3)) + "掲載準備中" + "　".repeat(Math.floor(title.length / 3))
+                                    ? "掲載準備中"
                                     : title
                                 : title
                         }
