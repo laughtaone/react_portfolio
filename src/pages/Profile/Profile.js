@@ -114,6 +114,7 @@ const Profile = () => {
                                 icon={item.icon}
                                 text={item.text}
                                 detail={item.detail}
+                                customLRPadding={20}
                             />
                         ))}
                         </div>

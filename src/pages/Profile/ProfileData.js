@@ -61,6 +61,16 @@ const profileDataMain = [
 
 const profileDataLeft = [
     {
+        title: "MBTI",
+        icon: <FavoriteBorderOutlined className='profile-title-icon' />,
+        text: "INFJ (提唱者)"
+    },
+    {
+        title: "学生生活で印象に残ったこと",
+        icon: <StarBorderOutlined className='profile-title-icon' />,
+        text: "Hack Uへの参加・研修旅行"
+    },
+    {
         title: "SNS等",
         icon: <LanguageOutlined className='profile-title-icon' />,
         text: <div>
@@ -93,24 +103,19 @@ const profileDataLeft = [
 
 const profileDataRight = [
     {
-        title: "MBTI",
-        icon: <FavoriteBorderOutlined className='profile-title-icon' />,
-        text: "INFJ (提唱者)"
-    },
-    {
         title: "ゼミナールでの学習テーマ",
         icon: <ScienceOutlined className='profile-title-icon' />,
         text: "PythonやKaggleを用いたデータ分析手法学習"
     },
     {
-        title: "学生生活で印象に残ったこと",
-        icon: <StarBorderOutlined className='profile-title-icon' />,
-        text: "Hack Uへの参加・研修旅行"
+        title: "卒業研究テーマ(現時点)",
+        icon: <ScienceOutlined className='profile-title-icon' />,
+        text: "PythonやLlamaを用いたアンチコメント分析と表現変更による効果の検証"
     },
     {
         title: "資格",
         icon: <LocalPoliceOutlined className='profile-title-icon' />,
-        text: "（2025.3 受験予定：実用数学技能検定(数検) 2級）"
+        text: "（結果待ち：実用数学技能検定 2級）"
     },
     {
         title: "中学時代の部活動",

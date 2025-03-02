@@ -50,8 +50,9 @@ const ComponentSnsTile = ({
     customMainColor="var(--common-main-color)",
     customBackColor="var(--common-back-deep-color)",
     customHoverBackColor="var(--common-back-deep2-color",
-    isFullWidth=true,
-    isPreparing=false
+    isFullWidth=false,
+    isPreparing=false,
+    customLRMargin=0
 }) => {
     React.useEffect(() => {
         const styleSheet = document.createElement("style");
@@ -94,10 +95,14 @@ const ComponentSnsTile = ({
                             ? customHoverBackColor
                             : customBackColor,
                     // width: isFullWidth ? 'null' : 'fit-content',
-                    width: (initialWidth)
-                        ? `${initialWidth}px`
-                        : 'fit-content',
-                    marginBottom: needsBottomMargin ? '5px' :'0px'
+                    width: (isFullWidth)
+                        ? '100%'
+                        : (initialWidth)
+                            ? `${initialWidth}px`
+                            : 'fit-content',
+                    marginBottom: needsBottomMargin ? '5px' :'0px',
+                    marginLeft: customLRMargin,
+                    marginRight: customLRMargin
                 }}
                 className="sns-tile-container"
                 onMouseEnter={handleMouseEnter}

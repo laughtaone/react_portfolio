@@ -81,7 +81,7 @@ export const profileStyle = `
 
 
 
-const ComponentProfileTile = ({ title, icon, text, subtitle="", detail }) => {
+const ComponentProfileTile = ({ title, icon, text, subtitle="", detail, customLRPadding=15 }) => {
     React.useEffect(() => {
         const styleSheet = document.createElement("style");
         styleSheet.innerText = profileStyle;
@@ -112,11 +112,13 @@ const ComponentProfileTile = ({ title, icon, text, subtitle="", detail }) => {
             <Spacer height={5} />
 
             {/* 真ん中のテキスト */}
-            <div className="centerText">
+            <div
+                className="centerText"
+                style={{ padding: `0 ${customLRPadding}px` }}>
                 {text}
             </div>
 
-            {/* detailの要素が存在する場合に右上にアイコンを表示 */}
+            {/* detailの要素が存在する場合、下側を指すアイコンを表示 */}
             {detail!=null && (
                 <Icon className='detailIcon ' style={{ margin: 0 }}><ExpandMore /></Icon>
             )}
