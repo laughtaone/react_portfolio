@@ -95,7 +95,7 @@ const profileDataLeft = [
             <ComponentSnsTile
                 icon="appstore"
                 title="AppStore"
-                url='https://www.wantedly.com/id/usubataichi'
+                url='https://apps.apple.com/jp/developer/taichi-usuba/id1798659459'
             />
         </div>
     }

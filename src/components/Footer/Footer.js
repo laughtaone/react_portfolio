@@ -124,10 +124,13 @@ const Footer = () => {
                     >
                         <p className='footer-aws-list-p'>
                             <Icon className='footer-aws-icon'><PlaceOutlined style={{fontSize: '22px'}} /></Icon>
-                            リージョン　東京リージョン
+                            リージョン：東京
                         </p>
                         <p className='footer-aws-list-p' style={{fontSize: '90%'}}>
-                            （ AZ　2個目/2個中 ）
+                            <del>（ AZ　2個目/2個中 ）</del>
+                        </p>
+                        <p className='footer-aws-list-p' style={{fontSize: '80%'}}>
+                            不具合により、現在AZ2個目のみで運用中
                         </p>
                     </div>
                 </div>
