@@ -1,0 +1,10 @@
+RewriteEngine On
+RewriteBase /
+
+# index.htmlをそのまま返さないようにする
+RewriteRule ^index\.html$ - [L]
+
+# 存在しないファイルまたはディレクトリに対して、index.htmlを返す
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ /index.html [L]
