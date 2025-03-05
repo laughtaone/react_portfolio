@@ -74,6 +74,21 @@ const Footer = () => {
         return () => window.removeEventListener("resize", handleResize);
     }, []);
 
+
+    const [az, setAz] = useState("");
+    useEffect(() => {
+        fetch("/metadata.php")
+            .then((res) => res.json())
+            .then((data) => {
+                setAz(data.az);
+            })
+            .catch((err) => console.error("EC2メタデータ取得エラー:", err));
+    }, []);
+
+    console.log(`az: ${az}`);
+    const instanceId = (az === "ap-northeast-1a") ? 1 : (az === "ap-northeast-1d") ? 2 : null;
+
+
     return (
         <footer
             className="footer"
@@ -127,10 +142,7 @@ const Footer = () => {
                             リージョン：東京
                         </p>
                         <p className='footer-aws-list-p' style={{fontSize: '90%'}}>
-                            <del>（ AZ　2個目/2個中 ）</del>
-                        </p>
-                        <p className='footer-aws-list-p' style={{fontSize: '80%'}}>
-                            不具合により、現在AZ2個目のみで運用中
+                            （ AZ　{(instanceId!=null) ? `${instanceId ?? ''}個目/2個中` :'取得できませんでした'} ）
                         </p>
                     </div>
                 </div>
