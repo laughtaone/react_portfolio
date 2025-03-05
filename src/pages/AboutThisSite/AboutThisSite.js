@@ -28,6 +28,14 @@ const AboutThisSite = () => {
                     url="https://github.com/laughtaone/react_portfolio"
                 />
             </div>
+            <div style={{ display: "flex", marginTop: "20px", justifyContent: "center", alignItems: "center" }}>
+                <p>Zenn記事公開中：</p>
+                <ComponentSnsTile
+                    title="Zenn記事"
+                    icon="url"
+                    url="https://zenn.dev/laughtaone/articles/d102b83b8c0870"
+                />
+            </div>
         </CenteredContainer>
         <Footer />
     </>);
