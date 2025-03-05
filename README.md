@@ -58,7 +58,8 @@ react_portfolio
 
 ## 🧑‍💻 開発手順
 詳しい開発手順は、下記のZennリンクに公開しております。
-[https://zenn.dev/](https://zenn.dev/)
+[https://zenn.dev/laughtaone/articles/d102b83b8c0870](https://zenn.dev/laughtaone/articles/d102b83b8c0870)
+
 
 ## ☁️ AWSについて
 ### 使用サービス
@@ -73,8 +74,7 @@ AWSの内、下記サービスを使用して公開しています。
 東京リージョン（2つのAZ）を使用しています。
 
 これらの詳しい内容も、先述したZennに公開しております。
-<!-- [https://zenn.dev/](https://zenn.dev/) -->
-[Zenn 準備中]()
+[https://zenn.dev/laughtaone/articles/d102b83b8c0870](https://zenn.dev/laughtaone/articles/d102b83b8c0870)
 
 
 ##  🚀 今後の展望
