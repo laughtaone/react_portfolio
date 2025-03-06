@@ -5,6 +5,7 @@ import { FlagOutlined, PlaceOutlined, SchoolOutlined, TagOutlined } from '@mui/i
 import Spacer from '../../components/Spacer'
 // import './Footer.css';
 import { useState, useEffect } from "react";
+import ComponentInfoZone from './ComponentInfoZone';
 
 
 
@@ -84,8 +85,6 @@ const Footer = () => {
             })
             .catch((err) => console.error("EC2メタデータ取得エラー:", err));
     }, []);
-
-    console.log(`az: ${az}`);
     const instanceId = (az === "ap-northeast-1a") ? 1 : (az === "ap-northeast-1d") ? 2 : null;
 
 
@@ -129,27 +128,12 @@ const Footer = () => {
                 <div>
                     <h3 style={{margin: '3px 0', fontSize: '17px'}}>当サイトはReactおよびAWSを用いて構築・運営しています</h3>
                     <Spacer height={5} />
-                    <div
-                        className='footer-aws-list'
-                        style={{
-                            // marginLeft: (isDesktop) ? 'auto' : '0',
-                            margin: (isDesktop) ? '0 0 0 auto' : 'auto',
-                            maxWidth: '260px'
-                        }}
-                    >
-                        <p className='footer-aws-list-p'>
-                            <Icon className='footer-aws-icon'><PlaceOutlined style={{fontSize: '22px'}} /></Icon>
-                            リージョン：東京
-                        </p>
-                        <p className='footer-aws-list-p' style={{fontSize: '90%'}}>
-                            （ AZ　{(instanceId!=null) ? `${instanceId ?? ''}個目/2個中` :'取得できませんでした'} ）
-                        </p>
-                    </div>
+                    <ComponentInfoZone instanceId={instanceId} isDesktop={isDesktop} />
                 </div>
 
                 <Spacer height={30} />
 
-                <p>当サイトの設計については <a href="aboutthissite">こちら</a></p>
+                <p>当サイトの設計については <a href="aboutsite">こちら</a></p>
             </div>
         </footer>
     );

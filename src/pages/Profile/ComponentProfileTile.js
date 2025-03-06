@@ -40,7 +40,6 @@ export const profileStyle = `
     .centerText {
         text-align: center;
         color: var(--common-main-color);
-        font-weight: bold;
         word-wrap: break-word;
         word-break: break-word;
         white-space: normal;
@@ -81,7 +80,15 @@ export const profileStyle = `
 
 
 
-const ComponentProfileTile = ({ title, icon, text, subtitle="", detail, customLRPadding=15 }) => {
+const ComponentProfileTile = ({
+    title,
+    icon,
+    text,
+    subtitle="",
+    detail,
+    customLRPadding=15,
+    isTextBold=true
+}) => {
     React.useEffect(() => {
         const styleSheet = document.createElement("style");
         styleSheet.innerText = profileStyle;
@@ -104,8 +111,8 @@ const ComponentProfileTile = ({ title, icon, text, subtitle="", detail, customLR
         >
             {/* 左上のタイトル */}
             <div className="title">
-                <Icon style={{margin: 0 }}>{icon}</Icon>
-                <span style={{ marginLeft: 5 }}>{title}</span>
+                {(icon!=null) ? <Icon style={{margin: 0 }}>{icon}</Icon> : null}
+                <span style={{ marginLeft: (icon!=null) ? 5 : 0 }}>{title}</span>
                 <span style={{ marginLeft: 2, fontSize: '70%' }}>{subtitle}</span>
             </div>
 
@@ -114,7 +121,7 @@ const ComponentProfileTile = ({ title, icon, text, subtitle="", detail, customLR
             {/* 真ん中のテキスト */}
             <div
                 className="centerText"
-                style={{ padding: `0 ${customLRPadding}px` }}>
+                style={{ padding: `0 ${customLRPadding}px`, fontWeight: (isTextBold) ? 'bold' : 'normal' }}>
                 {text}
             </div>
 

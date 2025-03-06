@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react';
 import Icon from '@mui/material/Icon';
 import '../../App.css';
-import { AttachFileOutlined, GitHub, LanguageOutlined, YouTube } from '@mui/icons-material';
+import { AttachFileOutlined, GitHub, InsertLinkOutlined, LanguageOutlined, YouTube } from '@mui/icons-material';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAppStoreIos } from '@fortawesome/free-brands-svg-icons';
 
@@ -52,7 +52,9 @@ const ComponentSnsTile = ({
     customHoverBackColor="var(--common-back-deep2-color",
     isFullWidth=false,
     isPreparing=false,
-    customLRMargin=0
+    customLRMargin=0,
+    customTBPadding=8,
+    customMaxWidth=null
 }) => {
     React.useEffect(() => {
         const styleSheet = document.createElement("style");
@@ -88,13 +90,16 @@ const ComponentSnsTile = ({
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{
-                    padding: isMiniSize ? '8px 15px' : '11px 20px',
+                    padding: (isMiniSize)
+                        ? `${customTBPadding}px 15px`
+                        : `${(customTBPadding==8) ? (customTBPadding+3) : customTBPadding}px 20px`,
                     backgroundColor: (isPreparing)
                         ? '#f9f9f9'
                         : (isHovered)
                             ? customHoverBackColor
                             : customBackColor,
                     // width: isFullWidth ? 'null' : 'fit-content',
+                    maxWidth: customMaxWidth,
                     width: (isFullWidth)
                         ? '100%'
                         : (initialWidth)
@@ -119,7 +124,9 @@ const ComponentSnsTile = ({
                                     ? icon=<div style={{ display: 'flex', alignItems: 'center' }}><FontAwesomeIcon icon={faAppStoreIos} className='sns-icon' style={{color: (isPreparing) ? '#a0a0a0' : customMainColor}}/></div>
                                     : icon=="url"
                                         ? <LanguageOutlined className='sns-icon' style={{color: (isPreparing) ? '#a0a0a0' : customMainColor}} />
-                                        : icon
+                                            : icon=="link"
+                                                ? <InsertLinkOutlined className='sns-icon' style={{color: (isPreparing) ? '#a0a0a0' : customMainColor}} />
+                                                : icon
                     }
                     <span
                         style={{
@@ -130,8 +137,9 @@ const ComponentSnsTile = ({
                                 ? (isHovered)
                                     ? "#df2046"
                                     :  '#a0a0a0'
-                                : customMainColor
-                            }}
+                                : customMainColor,
+                            userSelect: (isPreparing) ? 'none' : 'auto'
+                        }}
                     >
                         {
                             (isPreparing)

@@ -149,7 +149,7 @@ const Header = () => {
                             <li className="header-nav-item"><a href="profile" className={`header-nav-link ${location.pathname === '/profile' ? 'active' : ''}`}>プロフィール</a></li>
                             <li className="header-nav-item"><a href="history" className={`header-nav-link ${location.pathname === '/history' ? 'active' : ''}`}>来歴</a></li>
                             <li className="header-nav-item"><a href="works" className={`header-nav-link ${location.pathname === '/works' ? 'active' : ''}`}>制作物</a></li>
-                            <li className="header-nav-item"><a href="aboutthissite" className={`header-nav-link ${location.pathname === '/aboutthissite' ? 'active' : ''}`}>当サイト説明</a></li>
+                            <li className="header-nav-item"><a href="aboutsite" className={`header-nav-link ${location.pathname === '/aboutsite' ? 'active' : ''}`}>当サイト説明</a></li>
                             <li className="header-nav-item"><a href="contact" className={`header-nav-link ${location.pathname === '/contact' ? 'active' : ''}`}>お問合せ</a></li>
                         </ul>
                         : <div
@@ -220,7 +220,7 @@ const Header = () => {
                             <li className="header-nav-item-mobile"><a href="profile" className={`header-nav-link-mobile ${location.pathname === '/profile' ? 'active' : ''}`}>プロフィール</a></li>
                             <li className="header-nav-item-mobile"><a href="history" className={`header-nav-link-mobile ${location.pathname === '/history' ? 'active' : ''}`}>来歴</a></li>
                             <li className="header-nav-item-mobile"><a href="works" className={`header-nav-link-mobile ${location.pathname === '/works' ? 'active' : ''}`}>制作物</a></li>
-                            <li className="header-nav-item-mobile"><a href="aboutthissite" className={`header-nav-link-mobile ${location.pathname === '/aboutthissite' ? 'active' : ''}`}>当サイト説明</a></li>
+                            <li className="header-nav-item-mobile"><a href="aboutsite" className={`header-nav-link-mobile ${location.pathname === '/aboutsite' ? 'active' : ''}`}>当サイト説明</a></li>
                             <li className="header-nav-item-mobile"><a href="contact" className={`header-nav-link-mobile ${location.pathname === '/contact' ? 'active' : ''}`}>お問合せ</a></li>
                         </ul>
                     </div>
