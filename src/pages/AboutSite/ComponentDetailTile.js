@@ -24,6 +24,8 @@ const ComponentDetailTile = ({ icon, title, content }) => {
             title={title}
             text={content}
             isTextBold={false}
+            customWidth='70%'
+            isMerginAuto={true}
         />
     );
 }

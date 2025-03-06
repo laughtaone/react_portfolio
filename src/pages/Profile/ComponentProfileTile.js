@@ -87,7 +87,9 @@ const ComponentProfileTile = ({
     subtitle="",
     detail,
     customLRPadding=15,
-    isTextBold=true
+    isTextBold=true,
+    customWidth=null,
+    isMerginAuto=false
 }) => {
     React.useEffect(() => {
         const styleSheet = document.createElement("style");
@@ -108,6 +110,11 @@ const ComponentProfileTile = ({
             className="container"
             onMouseEnter={handleMouseEnter} // ホバー時
             onMouseLeave={handleMouseLeave} // ホバー解除時
+            style={{
+                width: customWidth,
+                marginLeft: (isMerginAuto) ? 'auto' : 0,
+                marginRight: (isMerginAuto) ? 'auto' : 0
+            }}
         >
             {/* 左上のタイトル */}
             <div className="title">

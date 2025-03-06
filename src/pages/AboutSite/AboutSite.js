@@ -166,6 +166,7 @@ const AboutSite = () => {
             <ComponentAboutSiteTile
                 title="関連リンク"
                 content={<>
+                    <Pmb>関連リンクは 次の2つ です。</Pmb>
                     <ComponentDetailTile
                         icon={<LinkOutlined />}
                         title="GitHub"
