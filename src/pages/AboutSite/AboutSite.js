@@ -16,6 +16,7 @@ import {ComponentDetailTileP, ComponentDetailTile} from './ComponentDetailTile';
 import ComponentHistoryTile from '../History/ComponentHistoryTile';
 import footerAz1 from '../../assets/images/aboutsite/footer_az1.png';
 import footerAz2 from '../../assets/images/aboutsite/footer_az2.png';
+import awsDiagram from '../../assets/images/aboutsite/aws_diagram.png';
 import { useState, useEffect } from "react";
 import ComponentInfoZone from '../../components/Footer/ComponentInfoZone';
 import Pcaption from '../../components/Pcaption';
@@ -158,6 +159,18 @@ const AboutSite = () => {
                         title="構築手順"
                         content={<>
                             <ComponentDetailTileP>詳しい手順は下記<SpanBold>Zenn記事</SpanBold>よりご覧いただけます</ComponentDetailTileP>
+                        </>}
+                    />
+                    <ComponentDetailTile
+                        title="AWS構成図"
+                        content={<>
+                            <ComponentDetailTileP>今回構築した<SpanBold>AWSの構成図</SpanBold>は次の通りです</ComponentDetailTileP>
+                            <p style={{fontSize: '80%', marginTop: "3px"}}>（AWS初心者のため正確でない可能性があります）</p>
+                            <img
+                                src={awsDiagram}
+                                alt="Footer AZ1"
+                                style={{ width: "100%", height: "auto", marginTop: "10px" }}
+                            />
                         </>}
                     />
                 </>}
