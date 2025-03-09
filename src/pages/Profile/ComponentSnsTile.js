@@ -43,6 +43,7 @@ export const style = `
 const ComponentSnsTile = ({
     icon,
     title,
+    subtitle,
     url="",
     needsRightPadding=false,
     needsBottomMargin=true,
@@ -54,7 +55,9 @@ const ComponentSnsTile = ({
     isPreparing=false,
     customLRMargin=0,
     customTBPadding=8,
-    customMaxWidth=null
+    customMaxWidth=null,
+    isSubtitleColumn=false,
+    customPreparingMessage="掲載準備中"
 }) => {
     React.useEffect(() => {
         const styleSheet = document.createElement("style");
@@ -130,24 +133,41 @@ const ComponentSnsTile = ({
                     }
                     <span
                         style={{
+                            display: (subtitle !== null) ? 'inline-flex' : 'flex',
+                            flexDirection: (isSubtitleColumn) ? 'column' : 'row',
+                            justifyContent: 'center',
                             marginLeft: 0,
                             textAlign: 'center',
                             width: '100%',
-                            color: (isPreparing)
-                                ? (isHovered)
+                            color: isPreparing
+                                ? isHovered
                                     ? "#df2046"
-                                    :  '#a0a0a0'
+                                    : '#a0a0a0'
                                 : customMainColor,
-                            userSelect: (isPreparing) ? 'none' : 'auto'
+                            userSelect: isPreparing ? 'none' : 'auto',
+                            display: 'inline-flex',
+                            alignItems: 'center'
                         }}
                     >
                         {
-                            (isPreparing)
-                                ? (isHovered)
-                                    ? "掲載準備中"
+                            isPreparing
+                                ? isHovered
+                                    ? customPreparingMessage
                                     : title
                                 : title
                         }
+                        {subtitle && (
+                            <span
+                                style={{
+                                    fontSize: '0.8em',
+                                    marginLeft: isSubtitleColumn ? '0px' : '6px',
+                                    opacity: 0.7,
+                                    textAlign: 'center'
+                                }}
+                            >
+                                {subtitle}
+                            </span>
+                        )}
                     </span>
                 </div>
             </a>

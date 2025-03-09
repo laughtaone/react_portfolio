@@ -20,7 +20,7 @@ const ComponentInfoZone = ({ instanceId, isDesktop }) => {
                 リージョン：東京
             </p>
             <p className='footer-aws-list-p' style={{fontSize: '90%'}}>
-                （ AZ　{(instanceId!=null) ? `${instanceId ?? ''}個目/2個中` :'取得できませんでした'} ）
+                （ AZ　{(instanceId!=null) ? `${instanceId ?? '？'}個目/2個中` :'取得できませんでした'} ）
             </p>
         </div>
     );

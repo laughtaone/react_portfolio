@@ -84,8 +84,11 @@ const Works = () => {
                                         key={index}
                                         icon={link.icon}
                                         title={link.title}
+                                        subtitle={link.subtitle}
                                         url={link.url}
                                         isPreparing={link.isPreparing}
+                                        isSubtitleColumn={link.isSubtitleColumn}
+                                        customPreparingMessage={link.customPreparingMessage}
                                     />
                                 ))}</>
                                 : null
@@ -164,6 +167,8 @@ const Works = () => {
                                         title={link.title}
                                         url={link.url}
                                         isPreparing={link.isPreparing}
+                                        isSubtitleColumn={link.isSubtitleColumn}
+                                        customPreparingMessage={link.customPreparingMessage}
                                     />
                                 ))}</>
                                 : null

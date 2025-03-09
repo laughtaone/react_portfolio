@@ -18,8 +18,17 @@ import historyData from './HistoryData';
 
 // ----------------------------------------- 使用関数類 ------------------------------------------
 // SNSタイルの共通オプション
-const SnsTileCommonOption = ({ icon, title, url = "", isPreparing=false }) => {
-    return <ComponentSnsTile icon={icon} title={title} url={url} needsRightPadding={true} isMiniSize={true} isPreparing={isPreparing}  />;
+const SnsTileCommonOption = ({icon, title, subtitle, url = "", isPreparing=false, customPreparingMessage }) => {
+    return <ComponentSnsTile
+        icon={icon}
+        title={title}
+        subtitle={subtitle}
+        url={url}
+        needsRightPadding={true}
+        isMiniSize={true}
+        isPreparing={isPreparing}
+        customPreparingMessage={customPreparingMessage}
+    />;
 };
 
 // 来歴データを年月でソートしsortedHistoryDataとして保存
@@ -92,8 +101,11 @@ const History = () => {
                                     key={index}
                                     icon={link.icon}
                                     title={link.title}
+                                    subtitle={link.subtitle}
                                     url={link.url}
                                     isPreparing={link.isPreparing}
+                                    isSubtitleColunm={link.isSubtitleColumn}
+                                    customPreparingMessage={link.customPreparingMessage}
                                 />
                             ))}</>
                             : null

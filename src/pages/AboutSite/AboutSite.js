@@ -63,9 +63,9 @@ const AboutSite = () => {
                     />
 
                     <ComponentDetailTile
-                        title="デザイン設計"
+                        title="サイトデザイン"
                         content={<>
-                            <ComponentDetailTileP>サイトデザインのアイデア設計には<SpanBold>Figma</SpanBold>を用いた</ComponentDetailTileP>
+                            <ComponentDetailTileP><SpanBold>Figma</SpanBold>を用いてデザイン案を考えました</ComponentDetailTileP>
                             <Spacer height={5} />
                             <div style={{display: "flex", justifyContent: "center", alignItems: "center"}}>
                                 <ComponentSnsTile
@@ -83,7 +83,7 @@ const AboutSite = () => {
                     <ComponentDetailTile
                         title="工夫点1"
                         content={<>
-                            <ComponentDetailTileP>私の苗字につく「<SpanBold customLRMargin={0}>葉</SpanBold>」のアイコン画像を、ファビコンやトップページ、各ページのタイトル部分に載せることで、より<SpanBold>印象に残る</SpanBold>ようなサイトデザインに仕上げました。</ComponentDetailTileP>
+                            <ComponentDetailTileP>私の苗字に入っている「<SpanBold customLRMargin={0}>葉</SpanBold>」のアイコン画像を<SpanBold>ファビコン・トップページ・各ページのタイトル部分</SpanBold>に載せることで、より<SpanBold>印象に残る</SpanBold>ようなサイトデザインに仕上げました</ComponentDetailTileP>
                             <Spacer height={10} />
                             <div style={{ width: '100%', display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "column" }}>
                                 <img
@@ -99,7 +99,7 @@ const AboutSite = () => {
                     <ComponentDetailTile
                         title="工夫点2"
                         content={<>
-                            <ComponentDetailTileP>今回、2つのEC2インスタンスを用いて運用しているため、<SpanBold>フッター部分</SpanBold>にどちらのAZのものからサイトを閲覧しているか表示させました。</ComponentDetailTileP>
+                            <ComponentDetailTileP>2つのEC2インスタンスで運用しているため、<SpanBold>フッター部分</SpanBold>にどちらのAZのものからサイトを閲覧しているか表示されるようにしました</ComponentDetailTileP>
 
                             <Spacer height={10} />
 
@@ -120,14 +120,14 @@ const AboutSite = () => {
                     <ComponentDetailTile
                         title="使用サービス"
                         content={<>
-                            <ComponentDetailTileP>当サイトでは、以下のAWSサービスを使用しています。</ComponentDetailTileP>
-                            {[
+                            <ComponentDetailTileP><SpanBold>VPC, EC2, Route 53</SpanBold>を使用</ComponentDetailTileP>
+                            {/* {[
                                 'VPC',
                                 'EC2',
                                 'Route 53'
                             ].map((service, index) => {
                                 return <ComponentDetailTileP key={index}>・<SpanBold>{service}</SpanBold></ComponentDetailTileP>;
-                            })}
+                            })} */}
                         </>}
                     />
                     <ComponentDetailTile
@@ -143,7 +143,7 @@ const AboutSite = () => {
                         </>}
                     />
                     <ComponentDetailTile
-                        title="Route 53"
+                        title="DNSルーティング"
                         content={<>
                             <ComponentDetailTileP><SpanBold>Route 53</SpanBold>を使用</ComponentDetailTileP>
                         </>}
@@ -157,7 +157,7 @@ const AboutSite = () => {
                     <ComponentDetailTile
                         title="構築手順"
                         content={<>
-                            <ComponentDetailTileP>構築の詳しい手順は、次章のZenn記事よりご覧いただけます</ComponentDetailTileP>
+                            <ComponentDetailTileP>詳しい手順は下記<SpanBold>Zenn記事</SpanBold>よりご覧いただけます</ComponentDetailTileP>
                         </>}
                     />
                 </>}

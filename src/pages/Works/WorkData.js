@@ -8,6 +8,7 @@ import { faAppStoreIos } from '@fortawesome/free-brands-svg-icons';
 
 // -------------------------------------------- 画像 --------------------------------------------
 import { ThumbnailChallenge, Sushiwari, ShinagawaRunners, OfficeDxApp, BeReehearsal, Okiben } from './thumbnail_images';
+import { icon } from '@fortawesome/fontawesome-svg-core';
 // ---------------------------------------------------------------------------------------------
 
 
@@ -143,7 +144,8 @@ export const workData = [
         detailLinks: [
             {
                 icon: "file",
-                title: "概要紹介資料(開発途中の8月時点)",
+                title: "概要紹介資料",
+                subtitle: "(開発途中の8月時点)",
                 url: "https://drive.google.com/file/d/1IRm9Dk-254WiM78np4HR5sS0csNxIbjL/view?usp=sharing"
             },
             {
@@ -154,9 +156,16 @@ export const workData = [
             {
                 icon: "github",
                 title: "GitHubリポジトリ",
-                url: "https://www.metro-cit.ac.jp/page_00810.html",
-                isPreparing: true
+                subtitle: "(デモ用)",
+                url: "https://github.com/laughtaone/OfficeDX-demo"
             },
+            {
+                icon: "url",
+                title: "デモページ",
+                subtitle: "(表示までに時間がかかる場合あり)",
+                url: "https://office-dx-ad8a3.web.app/",
+                isSubtitleColumn: true
+            }
         ]
     },
     {
@@ -168,7 +177,7 @@ export const workData = [
         isNotCodeAllowed: true,
         detailTitle: [
             "word2vecを用いた英単語学習アプリ",
-            "英単語同士を+/-して目標の英単語を目指すゲーム型学習アプリ",
+            "英単語同士を＋–して目標の英単語を目指すゲーム型学習アプリ",
         ],
         detailTiles: [
             {
@@ -224,8 +233,7 @@ export const workData = [
             {
                 icon: "github",
                 title: "GitHubリポジトリ",
-                url: "https://www.metro-cit.ac.jp/page_00810.html",
-                isPreparing: true
+                url: "https://github.com/laughtaone/bere"
             },
             {
                 icon: "url",
@@ -261,7 +269,15 @@ export const workData = [
             {
                 icon: "github",
                 title: "GitHubリポジトリ",
-                isPreparing: true
+                url: "https://github.com/laughtaone/okiben"
+            },
+            ,
+            {
+                icon: "appstore",
+                title: "AppStoreリンク",
+                url: "",
+                isPreparing: true,
+                customPreparingMessage: "審査中"
             }
         ]
     },
@@ -337,28 +353,21 @@ export const workPlanData = [
         ],
         detailLinks: [
             {
+                icon: "url",
+                title: "アプリデモ動画",
+                isPreparing: true
+            },
+            {
+                icon: "url",
+                title: "アプリ各画面スクショ",
+                isPreparing: true
+            },
+            {
                 icon: "github",
                 title: "GitHubリポジトリ",
                 isPreparing: true
             }
         ]
-    },
-    {
-        title: "マッチングアプリ\n課題解決アプリ",
-        subtitle: "個人 | 実装未開始",
-        kind: "idea-phase",
-        isDateStart: true,
-        detailTitle: "若者に人気のマッチングアプリに存在する課題を解決するアプリ",
-        detailTiles: [
-            {
-                title: "開発手法",
-                content: "Swiftを検討中"
-            },
-            {
-                title: "担当",
-                content: "全て(個人開発)"
-            }
-        ],
     },
     {
         title: "学生支援アプリ",
@@ -373,6 +382,23 @@ export const workPlanData = [
             {
                 title: "開発手法",
                 content: "Flutterを検討中"
+            },
+            {
+                title: "担当",
+                content: "全て(個人開発)"
+            }
+        ],
+    },
+    {
+        title: "マッチングアプリ\n課題解決アプリ",
+        subtitle: "個人 | 実装未開始",
+        kind: "idea-phase",
+        isDateStart: true,
+        detailTitle: "若者に人気のマッチングアプリに存在する課題を解決するアプリ",
+        detailTiles: [
+            {
+                title: "開発手法",
+                content: "Swiftを検討中"
             },
             {
                 title: "担当",

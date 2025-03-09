@@ -154,7 +154,8 @@ const historyData = [
         links: [
             {
                 icon: "file",
-                title: "概要紹介資料(開発途中の8月時点)",
+                title: "概要紹介資料",
+                subtitle: "(開発途中の8月時点での資料)",
                 url: "https://drive.google.com/file/d/1IRm9Dk-254WiM78np4HR5sS0csNxIbjL/view?usp=sharing"
             },
             {
@@ -164,14 +165,15 @@ const historyData = [
             },
             {
                 icon: "github",
-                title: "GitHubリポジトリ(デモ用)",
-                url: "https://www.metro-cit.ac.jp/page_00810.html",
-                isPreparing: true
+                title: "GitHubリポジトリ",
+                subtitle: "(デモ用)",
+                url: "https://github.com/laughtaone/OfficeDX-demo",
             },
             {
                 icon: "url",
                 title: "デモページ",
-                isPreparing: true
+                subtitle: "(アクセスから表示までに時間がかかる場合あり)",
+                url: "https://office-dx-ad8a3.web.app/"
             }
         ]
     },
@@ -230,8 +232,7 @@ const historyData = [
             {
                 icon: "github",
                 title: "GitHubリポジトリ",
-                url: "https://www.metro-cit.ac.jp/page_00810.html",
-                isPreparing: true
+                url: "https://github.com/laughtaone/bere",
             },
             {
                 icon: "url",
@@ -264,7 +265,14 @@ const historyData = [
             {
                 icon: "github",
                 title: "GitHubリポジトリ",
-                isPreparing: true
+                url: "https://github.com/laughtaone/okiben"
+            },
+            {
+                icon: "appstore",
+                title: "AppStoreリンク",
+                url: "",
+                isPreparing: true,
+                customPreparingMessage: "審査中"
             }
         ]
     },
@@ -280,7 +288,7 @@ const historyData = [
         title: "Hack U KOSEN 2024 参加",
         subtitle: [
             "「お正月をHackせよ」というテーマに対し、撮影した年賀状データからAIで俳句を作成し、カルタとして遊ぶアプリを開発",
-            "画像データBase64にエンコードしGPT APIでAIに投げ俳句を生成"
+            "画像データをBase64にエンコードしGPT APIでAIに投げ俳句を生成"
         ],
         details: [
             {
