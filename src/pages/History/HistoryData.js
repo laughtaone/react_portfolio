@@ -270,9 +270,7 @@ const historyData = [
             {
                 icon: "appstore",
                 title: "AppStoreリンク",
-                url: "",
-                isPreparing: true,
-                customPreparingMessage: "審査中"
+                url: "https://apps.apple.com/jp/app/okiben/id6743033384"
             }
         ]
     },

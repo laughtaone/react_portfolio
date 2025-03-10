@@ -275,9 +275,7 @@ export const workData = [
             {
                 icon: "appstore",
                 title: "AppStoreリンク",
-                url: "",
-                isPreparing: true,
-                customPreparingMessage: "審査中"
+                url: "https://apps.apple.com/jp/app/okiben/id6743033384"
             }
         ]
     },
@@ -355,17 +353,17 @@ export const workPlanData = [
             {
                 icon: "url",
                 title: "アプリデモ動画",
-                isPreparing: true
+                url: 'https://drive.google.com/file/d/1qkfALtjKyEfz6SKOByCPgDG5GbzPaiEL/view?usp=sharing'
             },
             {
                 icon: "url",
                 title: "アプリ各画面スクショ",
-                isPreparing: true
+                url: 'https://drive.google.com/drive/folders/1fU1Ag2VPUz7t7vEm3_jR739RpD1ZYNr3?usp=drive_link'
             },
             {
                 icon: "github",
                 title: "GitHubリポジトリ",
-                isPreparing: true
+                url: 'https://github.com/laughtaone/creeasy'
             }
         ]
     },
